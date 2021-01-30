@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 LABOR.digital
+ * Copyright 2021 LABOR.digital
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2020.09.04 at 16:39
+ * Last modified: 2021.01.30 at 21:15
  */
 
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
+namespace LaborDigital\Typo3BetterApiExample\Configuration\Table\Override;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\LinkSet\ConfigureLinkSetsInterface;
-use LaborDigital\T3BA\ExtConfigHandler\LinkSet\LinkSetCollector;
+use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
+use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 
-class LinkSetConfiguration implements ConfigureLinkSetsInterface
+class Demo implements ConfigureTcaTableInterface
 {
-    /**
-     * @inheritDoc
-     */
-    public static function configureLinkSets(LinkSetCollector $collector, ExtConfigContext $context)
+
+    public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
-        $collector->getSet('home')
-                  ->setPid('@pid.home');
+        dbge('OVERRIDE!');
     }
 
 }

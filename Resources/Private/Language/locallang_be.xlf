@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><!--
+  ~ Copyright 2020 LABOR.digital
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  ~ Last modified: 2020.10.20 at 11:16
+  -->
+
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
+        <header/>
+        <body>
+            <trans-unit id="p.pluginA.title">
+                <source>Plugin A</source>
+            </trans-unit>
+            <trans-unit id="p.pluginA.desc">
+                <source>A simple plugin that shows how you can configure an extbase plugin using ext config</source>
+            </trans-unit>
+            <trans-unit id="p.pluginB.title">
+                <source>Plugin B</source>
+            </trans-unit>
+            <trans-unit id="p.pluginB.desc">
+                <source>A simple plugin that shows how you can use fluid templates as a backend preview</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

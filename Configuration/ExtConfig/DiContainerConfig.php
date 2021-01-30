@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2020.09.04 at 16:39
+ * Last modified: 2020.10.19 at 20:36
  */
 
 declare(strict_types=1);
@@ -22,20 +22,16 @@ declare(strict_types=1);
 
 namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
 
+use LaborDigital\T3BA\ExtConfigHandler\DependencyInjection\DefaultDependencyInjectionConfig;
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\LinkSet\ConfigureLinkSetsInterface;
-use LaborDigital\T3BA\ExtConfigHandler\LinkSet\LinkSetCollector;
-
-class LinkSetConfiguration implements ConfigureLinkSetsInterface
+/**
+ * Class DiContainerConfig
+ *
+ * This configuration does seemingly nothing, but it extends the DefaultDependencyInjectionConfig
+ * which sets up the auto-wiring of all extension classes in the symfony container for us.
+ *
+ * @package LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig
+ */
+class DiContainerConfig extends DefaultDependencyInjectionConfig
 {
-    /**
-     * @inheritDoc
-     */
-    public static function configureLinkSets(LinkSetCollector $collector, ExtConfigContext $context)
-    {
-        $collector->getSet('home')
-                  ->setPid('@pid.home');
-    }
-
 }

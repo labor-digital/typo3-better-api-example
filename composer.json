@@ -6,7 +6,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "LaborDigital\\T3BA\\Example\\": "Classes"
+            "LaborDigital\\Typo3BetterApiExample\\": "Classes"
         }
     }
 }

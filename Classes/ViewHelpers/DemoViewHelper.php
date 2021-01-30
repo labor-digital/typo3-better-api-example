@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 LABOR.digital
+ * Copyright 2021 LABOR.digital
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2020.09.04 at 16:39
+ * Last modified: 2021.01.13 at 18:20
  */
 
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
+namespace LaborDigital\Typo3BetterApiExample\ViewHelpers;
 
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\LinkSet\ConfigureLinkSetsInterface;
-use LaborDigital\T3BA\ExtConfigHandler\LinkSet\LinkSetCollector;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
-class LinkSetConfiguration implements ConfigureLinkSetsInterface
+class DemoViewHelper extends AbstractViewHelper
 {
-    /**
-     * @inheritDoc
-     */
-    public static function configureLinkSets(LinkSetCollector $collector, ExtConfigContext $context)
+    public function render(): string
     {
-        $collector->getSet('home')
-                  ->setPid('@pid.home');
+        return 'This was rendered by a demo view helper :)';
     }
-
 }
