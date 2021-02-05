@@ -26,13 +26,33 @@ namespace LaborDigital\Typo3BetterApiExample\Configuration\Table\Override;
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
+use LaborDigital\Typo3BetterApiExample\EventHandler\DataHook\DemoDataHooks;
 
 class Demo implements ConfigureTcaTableInterface
 {
 
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
-        dbge('OVERRIDE!');
+        // Overrides work exactly like in the TYPO3 core.
+        // They are processed after TYPO3 loaded the Configuration/TCA/Overrides tca files.
+        // Therefore you can create a table like in the Configuration/Table/Demo class
+        // override some TCA values in Configuration/TCA/Overrides/demo.php
+        // an then come back here to edit those changes using the table builder again.
+        $table->registerSaveHook(DemoDataHooks::class, 'tableOverrideSaveHook');
+
+        // Everything in an override works in the same way a normal table would.
+        // So you can simply grab a field in a type and do stuff with it.
+        // You can add new types, modify existing types modify all of their children
+        // based on your liking.
+        $table->getType(1)->getField('override_field')
+              ->setLabel('exampleBe.t.demo.field.overrideField')
+              ->setDescription('exampleBe.t.demo.field.overrideField.desc')
+              ->applyPreset()
+              ->checkbox([
+                  'default' => true,
+                  'toggle',
+              ])
+              ->moveTo('0');
     }
 
 }

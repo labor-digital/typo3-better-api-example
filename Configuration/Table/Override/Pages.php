@@ -36,6 +36,7 @@ class Pages implements ConfigureTcaTableInterface, TcaTableNameProviderInterface
     public static function getTableName(): string
     {
         // We specifically want to override the pages table here
+        // If we would not define this here, the logic would automatically namespace the table to our extension
         return 'pages';
     }
 

@@ -14,29 +14,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.01.13 at 19:41
+ * Last modified: 2021.02.02 at 09:49
  */
 
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\Table\Article;
+namespace LaborDigital\Typo3BetterApiExample\Domain\Model;
 
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
-use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
+use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
 
-class Author implements ConfigureTcaTableInterface
+/**
+ * Class DemoManuallyMapped
+ *
+ * A manually mapped domain model that does not conform with TYPO3s naming schema
+ *
+ * @package LaborDigital\Typo3BetterApiExample\Domain\Model
+ *
+ * @see     \LaborDigital\Typo3BetterApiExample\Configuration\Table\Demo
+ */
+class DemoManuallyMapped extends BetterEntity
 {
+    /**
+     * @var string
+     */
+    protected $mappedInput;
 
     /**
-     * @inheritDoc
+     * @return string
      */
-    public static function configureTable(TcaTable $table, ExtConfigContext $context): void
+    public function getMappedInput(): string
     {
-        // This table should always be rendered before articles in the backend
-        $table->setListPosition(Article::class);
+        return $this->mappedInput;
     }
-
 }

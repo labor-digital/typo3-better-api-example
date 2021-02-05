@@ -32,6 +32,18 @@
             <trans-unit id="p.pluginB.desc">
                 <source>A simple plugin that shows how you can use fluid templates as a backend preview</source>
             </trans-unit>
+            <trans-unit id="t.demo.title">
+                <source>Demo-Record</source>
+            </trans-unit>
+            <trans-unit id="t.demo.palette.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="t.demo.field.overrideField">
+                <source>Override Field</source>
+            </trans-unit>
+            <trans-unit id="t.demo.field.overrideField.desc">
+                <source>This field was added in the table override file.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
