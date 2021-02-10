@@ -42,7 +42,10 @@ class Pages implements ConfigureTcaTableInterface, TcaTableNameProviderInterface
 
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
-        // TODO: Implement configureTable() method.
+        $type = $table->getType(1);
+        $type->getTab(0)->addMultiple(function () use ($type) {
+            $type->getField('my_field')->applyPreset()->input();
+        });
     }
 
 }
