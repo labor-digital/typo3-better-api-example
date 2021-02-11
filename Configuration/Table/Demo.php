@@ -173,12 +173,29 @@ class Demo implements ConfigureTcaTableInterface
                  // current extension directory. Please note, that we will only use this xml as a base
                  // and will not edit it in any shape or form. All changes you do to the flex form
                  // are stored in a separate xml file.
+
+                 // So lets begin and adjust the loaded form by injecting a dataHook for a field
+                 $form->getField('settings.mode')
+                      ->registerSaveHook(DemoDataHooks::class, 'flexFormFieldSaveHook');
+
+                 // We can, of course not only register save hooks, but also "form" hooks.
+                 // Those hooks allow you to modify the form configuration right before it is rendered
+                 // by the TYPO3 form engine.
+                 //
+                 // As you see, flex forms have a special quirk to them, as fields with the same name
+                 // may be registered multiple time. To access a field you can work with paths
+                 // that tell the getField method where to look for a field.
+                 // The parts of the path are separated using an arrow "->"
+                 // If you know that you only have a single field with a specific name, you don't need
+                 // to use paths, but they will come in handy in some edge cases
+                 $form->getField('Sorting->settings.sorting->name')
+                      ->registerFormHook(DemoDataHooks::class, 'flexFormFieldInSectionFormHook');
+
              })
             // Move this tab right after the first tab (id: 0)
             // The "after" is implicit, as it is the default value if you just define an identifier.
             // As you learned above, you could also provide a before:0 to move the tab in front of tab 0.
              ->moveTo('0');
-
 
         // SPECIAL TYPE (Typename: 1)
         // =============================
@@ -228,7 +245,6 @@ class Demo implements ConfigureTcaTableInterface
                  ->registerSaveHook(DemoDataHooks::class, 'typeFieldSaveHook');
 
         });
-
 
         // While table columns are automatically configured when you are using the applyPreset() function,
         // there are some SQL operations that have to be performed on a table level.

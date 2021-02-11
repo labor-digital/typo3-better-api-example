@@ -28,4 +28,7 @@ use LaborDigital\T3BA\Tool\Tca\Builder\FieldPreset\AbstractFieldPreset;
 class DemoPreset extends AbstractFieldPreset
 {
 
+    public function applyIrgendwas()
+    {
+    }
 }

@@ -27,7 +27,7 @@ use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Pid\ConfigurePidsInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Pid\PidCollector;
 
-class PidConfiguration implements ConfigurePidsInterface
+class Pids implements ConfigurePidsInterface
 {
     /**
      * @inheritDoc

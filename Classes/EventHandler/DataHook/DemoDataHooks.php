@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\Typo3BetterApiExample\EventHandler\DataHook;
 
 
-use LaborDigital\T3BA\Core\DependencyInjection\PublicServiceInterface;
+use LaborDigital\T3BA\Core\Di\PublicServiceInterface;
 use LaborDigital\T3BA\Tool\DataHook\DataHookContext;
 use LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService;
 
@@ -106,4 +106,19 @@ class DemoDataHooks implements PublicServiceInterface
             static::class . '::' . __FUNCTION__);
     }
 
+    public function flexFormFieldSaveHook(DataHookContext $c)
+    {
+        $this->flashMessages->addOk(
+            'Executed save hook on a flex form field: Field: ' . $c->getKey() . ' ' .
+            $c->getTableName(),
+            static::class . '::' . __FUNCTION__);
+    }
+
+    public function flexFormFieldInSectionFormHook(DataHookContext $c)
+    {
+        $this->flashMessages->addInfo(
+            'Executed form hook on a flex form field inside a section: Field: ' . $c->getKey() . ' ' .
+            $c->getTableName() . '. As you see, this hook is called once, for every section you create.',
+            static::class . '::' . __FUNCTION__);
+    }
 }

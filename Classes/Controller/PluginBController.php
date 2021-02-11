@@ -26,13 +26,13 @@ namespace LaborDigital\Typo3BetterApiExample\Controller;
 use LaborDigital\T3BA\ExtBase\Controller\BetterActionController;
 use LaborDigital\T3BA\ExtBase\Controller\ExtBaseBackendPreviewRendererTrait;
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\ConfigureExtBasePluginInterface;
+use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
 use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext;
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
 
 class PluginBController extends BetterActionController
-    implements ConfigureExtBasePluginInterface, BackendPreviewRendererInterface
+    implements ConfigurePluginInterface, BackendPreviewRendererInterface
 {
     use ExtBaseBackendPreviewRendererTrait;
 

@@ -22,7 +22,7 @@ declare(strict_types=1);
 
 namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
 
-use LaborDigital\T3BA\ExtConfigHandler\DependencyInjection\DefaultDependencyInjectionConfig;
+use LaborDigital\T3BA\ExtConfigHandler\Di\DefaultDiConfig;
 
 /**
  * Class DiContainerConfig
@@ -32,6 +32,6 @@ use LaborDigital\T3BA\ExtConfigHandler\DependencyInjection\DefaultDependencyInje
  *
  * @package LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig
  */
-class DiContainerConfig extends DefaultDependencyInjectionConfig
+class DiContainer extends DefaultDiConfig
 {
 }

@@ -31,9 +31,9 @@ use LaborDigital\T3BA\ExtConfigHandler\Fluid\FluidConfigurator;
 use LaborDigital\T3BA\ExtConfigHandler\Translation\ConfigureTranslationInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Translation\TranslationConfigurator;
 
-class CommonConfig implements ConfigureTranslationInterface,
-                              ConfigureTypoCoreInterface,
-                              ConfigureFluidInterface
+class Common implements ConfigureTranslationInterface,
+                        ConfigureTypoCoreInterface,
+                        ConfigureFluidInterface
 {
     /**
      * @inheritDoc

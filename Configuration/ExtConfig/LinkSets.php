@@ -27,7 +27,7 @@ use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\LinkSet\ConfigureLinkSetsInterface;
 use LaborDigital\T3BA\ExtConfigHandler\LinkSet\LinkSetCollector;
 
-class LinkSetConfiguration implements ConfigureLinkSetsInterface
+class LinkSets implements ConfigureLinkSetsInterface
 {
     /**
      * @inheritDoc

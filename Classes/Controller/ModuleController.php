@@ -25,7 +25,7 @@ namespace LaborDigital\Typo3BetterApiExample\Controller;
 
 use LaborDigital\T3BA\ExtBase\Controller\BetterActionController;
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Module\ConfigureExtBaseModuleInterface;
+use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Module\ConfigureModuleInterface;
 use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Module\ModuleConfigurator;
 use LaborDigital\T3BA\Tool\Rendering\BackendRenderingService;
 use LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService;
@@ -39,8 +39,8 @@ use Psr\Log\LoggerAwareTrait;
  *
  * @package LaborDigital\Typo3BetterApiExample\Controller
  */
-class ExtBaseModuleController extends BetterActionController
-    implements ConfigureExtBaseModuleInterface, LoggerAwareInterface
+class ModuleController extends BetterActionController
+    implements ConfigureModuleInterface, LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
@@ -72,7 +72,7 @@ class ExtBaseModuleController extends BetterActionController
         $this->view->assignMultiple(
             [
                 'title'   => 'Pages Overview',
-                'records' => $this->getInstanceOf(BackendRenderingService::class)
+                'records' => $this->getService(BackendRenderingService::class)
                                   ->renderDatabaseRecordList('pages', ['title'], ['pid' => 0]),
             ]
         );
@@ -88,7 +88,7 @@ class ExtBaseModuleController extends BetterActionController
 
     public function messageAction()
     {
-        $this->getInstanceOf(FlashMessageRenderingService::class)
+        $this->getService(FlashMessageRenderingService::class)
              ->addOk('You clicked on a button :)', 'You did it!', ['storeInSession']);
 
         // We redirect here, so we can use the "storeInSession" flag.
