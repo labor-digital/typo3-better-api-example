@@ -35,8 +35,29 @@ class Author implements ConfigureTcaTableInterface
      */
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
+        $table->setTitle('exampleBe.t.author.title');
+
+        // To make the table easier to read in the backend
+        // we use the "last_name" column as main label column
+        // in addition to that we add the "first_name" column as secondary label column and force
+        // the backend to render every time (using true as second parameter)
+        $table->setLabelColumn('last_name')
+              ->setLabelAlternativeColumns('first_name', true);
+
         // This table should always be rendered before articles in the backend
         $table->setListPosition(Article::class);
+
+        $type = $table->getType();
+        $type->getTab(0)->addMultiple(static function () use ($type) {
+            $type->getPalette('name')
+                 ->setLabel('exampleBe.t.author.palette.name')
+                 ->addMultiple(static function () use ($type) {
+                     $type->getField('first_name')->applyPreset()->input(['required']);
+                     $type->getField('last_name')->applyPreset()->input(['required']);
+                 });
+
+            $type->getField('birthday')->applyPreset()->date();
+        });
     }
 
 }

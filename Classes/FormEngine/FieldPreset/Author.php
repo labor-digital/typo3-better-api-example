@@ -24,11 +24,22 @@ namespace LaborDigital\Typo3BetterApiExample\FormEngine\FieldPreset;
 
 
 use LaborDigital\T3BA\Tool\Tca\Builder\FieldPreset\AbstractFieldPreset;
+use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\Author as AuthorTable;
 
-class DemoPreset extends AbstractFieldPreset
+class Author extends AbstractFieldPreset
 {
 
-    public function applyIrgendwas()
+    /**
+     * Defines the field to allow the selection for author records
+     *
+     * @param   array  $options  see {@link FieldPresetAutocompleteHelper::relationGroup()} for allowed options
+     */
+    public function applySelectAuthor(array $options = []): void
     {
+        // We set the default max items value to 1 if not provided differently by the author
+        $options['maxItems'] = $options['maxItems'] ?? 1;
+
+        // A preset can also utilize other, existing presets to create convenience wrappers, like this one
+        $this->field->applyPreset()->relationGroup(AuthorTable::class, $options);
     }
 }

@@ -20,6 +20,24 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
         <header/>
         <body>
+            <trans-unit id="p.article.title">
+                <source>Articles</source>
+            </trans-unit>
+            <trans-unit id="p.article.desc">
+                <source>Displays article records in different modes</source>
+            </trans-unit>
+            <trans-unit id="p.article.field.sorting">
+                <source>Sort field</source>
+            </trans-unit>
+            <trans-unit id="p.article.field.direction">
+                <source>Sort direction</source>
+            </trans-unit>
+            <trans-unit id="p.article.field.direction.asc">
+                <source>Ascending</source>
+            </trans-unit>
+            <trans-unit id="p.article.field.direction.desc">
+                <source>Descending</source>
+            </trans-unit>
             <trans-unit id="p.pluginA.title">
                 <source>Plugin A</source>
             </trans-unit>
@@ -43,6 +61,78 @@
             </trans-unit>
             <trans-unit id="t.demo.field.overrideField.desc">
                 <source>This field was added in the table override file.</source>
+            </trans-unit>
+            <trans-unit id="t.quote.title">
+                <source>Quote</source>
+            </trans-unit>
+            <trans-unit id="t.quote.field.quote">
+                <source>Quote</source>
+            </trans-unit>
+            <trans-unit id="t.quote.field.author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="t.article.title">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.author">
+                <source>Authors</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.headline">
+                <source>Headline</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.subHeadline">
+                <source>Sub Headline</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.slug">
+                <source>Slug</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.published">
+                <source>Published date</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.bannerImage">
+                <source>Banner image</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.bannerImage.crop">
+                <source>Crop</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.bannerImage.crop.wide">
+                <source>Wide</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.bannerImage.crop.quadratic">
+                <source>Quadratic</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.content">
+                <source>Content elements</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.categories">
+                <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.quotes">
+                <source>Quotes</source>
+            </trans-unit>
+            <trans-unit id="t.article.tab.content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="t.article.tab.relations">
+                <source>Relations</source>
+            </trans-unit>
+            <trans-unit id="t.author.title">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="t.author.palette.name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="t.author.field.slug">
+                <source>Slug</source>
+            </trans-unit>
+            <trans-unit id="t.author.field.firstName">
+                <source>First Name</source>
+            </trans-unit>
+            <trans-unit id="t.author.field.lastName">
+                <source>Last Name</source>
+            </trans-unit>
+            <trans-unit id="t.author.field.birthday">
+                <source>Birthday</source>
             </trans-unit>
         </body>
     </file>
