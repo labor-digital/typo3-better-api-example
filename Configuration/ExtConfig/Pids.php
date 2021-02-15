@@ -34,7 +34,23 @@ class Pids implements ConfigurePidsInterface
      */
     public static function configurePids(PidCollector $collector, ExtConfigContext $context): void
     {
-        $collector->set('home', 1);
+        $collector->set('page.home', 1);
+
+        $collector->setMultiple([
+            'storage' => [
+                'article' => 5,
+            ],
+            'page'    => [
+                'article' => [
+                    'list'   => 1,
+                    'detail' => 6,
+                ],
+                'author'  => [
+                    'detail' => 7,
+                ],
+            ],
+        ]);
+
     }
 
 }

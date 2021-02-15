@@ -20,11 +20,17 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
         <header/>
         <body>
+            <trans-unit id="p.author.title">
+                <source>Author detail</source>
+            </trans-unit>
+            <trans-unit id="p.author.desc">
+                <source>Displays the information about a single author and a list of all articles</source>
+            </trans-unit>
             <trans-unit id="p.article.title">
-                <source>Articles</source>
+                <source>Article List</source>
             </trans-unit>
             <trans-unit id="p.article.desc">
-                <source>Displays article records in different modes</source>
+                <source>Displays article records in list</source>
             </trans-unit>
             <trans-unit id="p.article.field.sorting">
                 <source>Sort field</source>
@@ -37,6 +43,12 @@
             </trans-unit>
             <trans-unit id="p.article.field.direction.desc">
                 <source>Descending</source>
+            </trans-unit>
+            <trans-unit id="p.article.detail.title">
+                <source>Article Detail</source>
+            </trans-unit>
+            <trans-unit id="p.article.detail.desc">
+                <source>Displays a single article</source>
             </trans-unit>
             <trans-unit id="p.pluginA.title">
                 <source>Plugin A</source>
@@ -82,6 +94,12 @@
             </trans-unit>
             <trans-unit id="t.article.field.subHeadline">
                 <source>Sub Headline</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.teaserText">
+                <source>Teaser Text</source>
+            </trans-unit>
+            <trans-unit id="t.article.field.teaserText.desc">
+                <source>This field is only shown in the article list</source>
             </trans-unit>
             <trans-unit id="t.article.field.slug">
                 <source>Slug</source>

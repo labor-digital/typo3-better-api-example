@@ -1,0 +1,43 @@
+<!--
+  ~ Copyright 2021 LABOR.digital
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  ~ Last modified: 2021.02.15 at 18:52
+  -->
+
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
+        <header/>
+
+        <body>
+            <trans-unit id="g.backHome">
+                <source>Go back home</source>
+            </trans-unit>
+            <trans-unit id="g.articleListLink">
+                <source>Go to article list</source>
+            </trans-unit>
+
+            <trans-unit id="p.author.birthday">
+                <source>Birthday</source>
+            </trans-unit>
+
+            <trans-unit id="p.article.author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="p.article.author">
+                <source>Author</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

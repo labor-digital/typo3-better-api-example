@@ -25,6 +25,7 @@ namespace LaborDigital\Typo3BetterApiExample\Domain\Repository\Article;
 
 use LaborDigital\T3BA\ExtBase\Domain\Repository\BetterRepository;
 use LaborDigital\T3BA\Tool\Database\BetterQuery\AbstractBetterQuery;
+use LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
 class ArticleRepository extends BetterRepository
@@ -38,12 +39,24 @@ class ArticleRepository extends BetterRepository
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-    public function getPluginList(array $settings, ?array $row = null): QueryResultInterface
+    public function findForListPlugin(array $settings, ?array $row = null): QueryResultInterface
     {
         // Why would you want to pass the $row, you ask? Because if you look closely it contains a field, called "pages".
         // That field defines the "record storage pages", or the place where the editor told TYPO3 to look for records.
         // The better query will take a look at that field and automatically create the required pid constraints for you.
         return $this->getPreparedQuery($settings, $row)->getAll();
+    }
+
+    /**
+     * Returns a list of all articles by this author
+     *
+     * @param   \LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author  $author
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findForAuthor(Author $author): QueryResultInterface
+    {
+        return $this->getQuery()->withWhere(['author has' => $author])->withOrder('published', 'desc')->getAll();
     }
 
     /**

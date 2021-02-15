@@ -41,4 +41,28 @@ class Author extends BetterEntity
      * @var \DateTime
      */
     protected $birthday;
+
+    /**
+     * @return string
+     */
+    public function getFirstName(): string
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName(): string
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getBirthday(): \DateTime
+    {
+        return $this->birthday;
+    }
 }

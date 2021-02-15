@@ -24,6 +24,7 @@ namespace LaborDigital\Typo3BetterApiExample\Domain\Model;
 
 
 use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Content extends BetterEntity
 {
@@ -42,4 +43,28 @@ class Content extends BetterEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $media;
+
+    /**
+     * @return string
+     */
+    public function getHeadline(): ?string
+    {
+        return $this->headline;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBodytext(): ?string
+    {
+        return $this->bodytext;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getMedia(): ?ObjectStorage
+    {
+        return $this->media;
+    }
 }

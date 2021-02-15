@@ -60,6 +60,14 @@ class Article implements ConfigureTcaTableInterface
                  ->setLabel('exampleBe.t.article.field.slug')
                  ->applyPreset()->slug(['headline'], ['prefix' => '/article/']);
 
+            // In our list action we want to show a short teaser text to get the attention of a user
+            $type->getField('teaser_text')
+                 ->setLabel('exampleBe.t.article.field.teaserText')
+                // Since TYPO3 v9 it is possible to provide descriptions for the editor in the
+                // backend. They are registered like a field label.
+                 ->setDescription('exampleBe.t.article.field.teaserText.desc')
+                 ->applyPreset()->textArea(['maxLength' => 512]);
+
             // We want to define a list of authors for our article. To define the relation we could either
             // use the selectGroup() preset to do that. However, we created a custom preset
             // to select an author in the following file:

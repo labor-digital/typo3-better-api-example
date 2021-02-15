@@ -23,7 +23,10 @@ declare(strict_types=1);
 namespace LaborDigital\Typo3BetterApiExample\Domain\Model\Article;
 
 
+use DateTime;
 use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Article extends BetterEntity
 {
@@ -39,9 +42,14 @@ class Article extends BetterEntity
     protected $subHeadline;
 
     /**
+     * @var string
+     */
+    protected $teaserText;
+
+    /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author>
      */
-    protected $authors;
+    protected $author;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\Typo3BetterApiExample\Domain\Model\Content>
@@ -62,4 +70,82 @@ class Article extends BetterEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
      */
     protected $categories;
+
+    /**
+     * @var \DateTime
+     */
+    protected $published;
+
+    /**
+     * @return string
+     */
+    public function getHeadline(): ?string
+    {
+        return $this->headline;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubHeadline(): ?string
+    {
+        return $this->subHeadline;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTeaserText(): string
+    {
+        return $this->teaserText;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getAuthor(): ?ObjectStorage
+    {
+        return $this->author;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getContent(): ?ObjectStorage
+    {
+        return $this->content;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getQuotes(): ?ObjectStorage
+    {
+        return $this->quotes;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    public function getBannerImage(): ?FileReference
+    {
+        return $this->bannerImage;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getCategories(): ?ObjectStorage
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPublished(): ?DateTime
+    {
+        return $this->published;
+    }
+
 }

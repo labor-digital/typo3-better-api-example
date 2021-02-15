@@ -1,0 +1,32 @@
+<html data-namespace-typo3-fluid="true">
+<article>
+    <div>
+        <h1>
+            {author.firstName} {author.lastName}
+        </h1>
+
+        <ul>
+            <li>
+                <!-- @f.of -->
+                <f:translate key="p.author.birthday"/>: <f:format.date>{author.birthday}</f:format.date>
+                <!-- @f.on -->
+            </li>
+        </ul>
+
+        <f:if condition="{articles}">
+            <ul>
+                <f:widget.paginate objects="{articles}" as="paginatedArticles">
+                    <f:for each="{paginatedArticles}" as="article">
+                        <li><a href="{T3BA:link.uri(definition: 'articleDetail', args:'{\'article\': article}')}">
+                            {article.headline} -
+                            <f:format.date>{article.published}</f:format.date>
+                        </a></li>
+                    </f:for>
+                </f:widget.paginate>
+            </ul>
+        </f:if>
+
+        <f:render partial="BackToArticleList"/>
+    </div>
+</article>
+</html>
