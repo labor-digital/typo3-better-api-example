@@ -28,7 +28,7 @@ use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 use LaborDigital\Typo3BetterApiExample\EventHandler\DataHook\DemoDataHooks;
 
-class Demo implements ConfigureTcaTableInterface
+class DemoTable implements ConfigureTcaTableInterface
 {
 
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void

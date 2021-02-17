@@ -29,7 +29,7 @@ use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 use LaborDigital\Typo3BetterApiExample\Domain\Model\DemoManuallyMapped;
 use LaborDigital\Typo3BetterApiExample\EventHandler\DataHook\DemoDataHooks;
 
-class Demo implements ConfigureTcaTableInterface
+class DemoTable implements ConfigureTcaTableInterface
 {
 
     /**
@@ -240,8 +240,8 @@ class Demo implements ConfigureTcaTableInterface
                 // Please note, that because we inherit the default type configuration for this field
                 // this field will actually trigger two save hooks. First the one that was
                 // configured in the default type, and second the one configured here.
-                // If you don't wand to inherit the dataHooks when you add a field in another type
-                // you can call $field->clearDataHooks() to remove all existing hook definitions
+                // If you don't want to inherit the dataHooks when you add a field in another type
+                // you must call $field->clearDataHooks() to remove all existing hook definitions
                  ->registerSaveHook(DemoDataHooks::class, 'typeFieldSaveHook');
 
         });

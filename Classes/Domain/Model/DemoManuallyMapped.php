@@ -32,7 +32,7 @@ use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
  *
  * @package LaborDigital\Typo3BetterApiExample\Domain\Model
  *
- * @see     \LaborDigital\Typo3BetterApiExample\Configuration\Table\Demo
+ * @see     \LaborDigital\Typo3BetterApiExample\Configuration\Table\DemoTable
  */
 class DemoManuallyMapped extends BetterEntity
 {

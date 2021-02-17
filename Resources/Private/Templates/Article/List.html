@@ -18,7 +18,8 @@
 
 <html data-namespace-typo3-fluid="true">
 <div>
-    <f:widget.paginate objects="{articles}" as="paginatedArticles">
+    <f:widget.paginate objects="{articles}" as="paginatedArticles"
+                       configuration="{itemsPerPage:3, addQueryString: 1 addQueryStringMethod: 'GET'}">
         <f:for each="{paginatedArticles}" as="article" iteration="i">
             <section>
                 <h3 style="margin-bottom: 0">

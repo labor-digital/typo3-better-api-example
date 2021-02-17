@@ -27,7 +27,7 @@ use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 
-class Article implements ConfigureTcaTableInterface
+class ArticleTable implements ConfigureTcaTableInterface
 {
 
     /**
@@ -101,7 +101,7 @@ class Article implements ConfigureTcaTableInterface
                  ->setLabel('exampleBe.t.article.field.quotes')
                 // As you can see here, we can simply use the table definition class of "quote" as
                 // table name. The internal logic will resolve the correct table name from that.
-                 ->applyPreset()->inline(Quote::class);
+                 ->applyPreset()->inline(QuoteTable::class);
         });
 
         // We want to create

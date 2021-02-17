@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.02.12 at 21:41
+ * Last modified: 2021.01.13 at 20:12
  */
 
 declare(strict_types=1);
@@ -28,28 +28,24 @@ use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Table\TcaTableNameProviderInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 
-class Content implements ConfigureTcaTableInterface, TcaTableNameProviderInterface
+class PagesTable implements ConfigureTcaTableInterface, TcaTableNameProviderInterface
 {
     /**
      * @inheritDoc
      */
     public static function getTableName(): string
     {
-        // We specifically want to override the tt_content table here
-        // If we would not define this, the logic would automatically namespace the table to our extension.
-        // Note, that you also need to implement the "TcaTableNameProviderInterface" interface on your configuration
-        // class in order for it to detect that you want to override the table name
-        return 'tt_content';
+        // We specifically want to override the pages table here
+        // If we would not define this here, the logic would automatically namespace the table to our extension
+        return 'pages';
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
-        // We don't really want to change anything on the tt_content table,
-        // but we want to tell the table, that our "Content" model, should be considered part of it.
-        // This allows extBase to map this model to the correct table - no typoScript needed :D
-        $table->addModelClass(\LaborDigital\Typo3BetterApiExample\Domain\Model\Content::class);
+        $type = $table->getType(1);
+        $type->getTab(0)->addMultiple(function () use ($type) {
+            $type->getField('my_field')->applyPreset()->input();
+        });
     }
+
 }

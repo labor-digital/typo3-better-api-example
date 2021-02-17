@@ -27,7 +27,7 @@ use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 
-class Author implements ConfigureTcaTableInterface
+class AuthorTable implements ConfigureTcaTableInterface
 {
 
     /**
@@ -45,7 +45,7 @@ class Author implements ConfigureTcaTableInterface
               ->setLabelAlternativeColumns('first_name', true);
 
         // This table should always be rendered before articles in the backend
-        $table->setListPosition(Article::class);
+        $table->setListPosition(ArticleTable::class);
 
         $type = $table->getType();
         $type->getTab(0)->addMultiple(static function () use ($type) {
@@ -55,6 +55,9 @@ class Author implements ConfigureTcaTableInterface
                      $type->getField('first_name')->applyPreset()->input(['required']);
                      $type->getField('last_name')->applyPreset()->input(['required']);
                  });
+
+            $type->getField('slug')
+                 ->applyPreset()->slug(['last_name', 'first_name'], ['separator' => '-']);
 
             $type->getField('birthday')->applyPreset()->date();
         });

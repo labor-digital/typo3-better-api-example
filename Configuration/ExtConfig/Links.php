@@ -26,7 +26,7 @@ namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Link\ConfigureLinksInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Link\DefinitionCollector;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\Article;
+use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\ArticleTable;
 use LaborDigital\Typo3BetterApiExample\Controller\ArticleController;
 use LaborDigital\Typo3BetterApiExample\Controller\AuthorController;
 
@@ -71,12 +71,13 @@ class Links implements ConfigureLinksInterface
             // require EXACTLY ONE argument. Neither 0, nor 2 or 22 will work!
                   ->addToLinkBrowser(
                 'exampleBe.t.article.title',
-                Article::class, [
-                // This is optional, but we want the TYPO3 backend to automatically
-                // open the correct storage pid for us when a user clicks on the "article" tab.
-                // Therefore we provide a base/storage pid using a reference in our pids
-                'basePid' => '@pid.storage.article',
-            ]);
+                ArticleTable::class,
+                [
+                    // This is optional, but we want the TYPO3 backend to automatically
+                    // open the correct storage pid for us when a user clicks on the "article" tab.
+                    // Therefore we provide a base/storage pid using a reference in our pids
+                    'basePid' => '@pid.storage.article',
+                ]);
 
         // Next we register a simple definition that will always point to our article list pid
         $collector->getDefinition('articleList')

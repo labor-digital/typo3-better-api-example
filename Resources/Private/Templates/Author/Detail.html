@@ -8,14 +8,17 @@
         <ul>
             <li>
                 <!-- @f.of -->
-                <f:translate key="p.author.birthday"/>: <f:format.date>{author.birthday}</f:format.date>
+                <f:translate key="p.author.birthday"/>
+                :
+                <f:format.date>{author.birthday}</f:format.date>
                 <!-- @f.on -->
             </li>
         </ul>
 
         <f:if condition="{articles}">
             <ul>
-                <f:widget.paginate objects="{articles}" as="paginatedArticles">
+                <f:widget.paginate objects="{articles}" as="paginatedArticles"
+                                   configuration="{itemsPerPage:3, addQueryStringMethod: 'GET'}">
                     <f:for each="{paginatedArticles}" as="article">
                         <li><a href="{T3BA:link.uri(definition: 'articleDetail', args:'{\'article\': article}')}">
                             {article.headline} -
