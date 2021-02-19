@@ -22,7 +22,11 @@ declare(strict_types=1);
 
 namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
 
+use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Di\DefaultDiConfig;
+use LaborDigital\Typo3BetterApiExample\Middleware\DemoMiddleware;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 /**
  * Class DiContainerConfig
@@ -34,4 +38,22 @@ use LaborDigital\T3BA\ExtConfigHandler\Di\DefaultDiConfig;
  */
 class DiContainer extends DefaultDiConfig
 {
+    /**
+     * @inheritDoc
+     */
+    public static function configure(
+        ContainerConfigurator $configurator,
+        ContainerBuilder $containerBuilder,
+        ExtConfigContext $context
+    ): void {
+        parent::configure($configurator, $containerBuilder, $context);
+
+        // We want to pass some configuration to our demo middleware
+        // This can be done using the dependency injection container configuration
+        // For additional configuration we could also register a factory method here
+        $containerBuilder->findDefinition(DemoMiddleware::class)
+                         ->addArgument('Hello world! How are you today?')
+                         ->addArgument('/say-hello');
+    }
+
 }
