@@ -20,6 +20,18 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
         <header/>
         <body>
+            <trans-unit id="g.dummy">
+                <source>Dummy!</source>
+            </trans-unit>
+            <trans-unit id="field.demoField.button.on">
+                <source>On</source>
+            </trans-unit>
+            <trans-unit id="field.demoField.button.off">
+                <source>Off</source>
+            </trans-unit>
+            <trans-unit id="wizard.button.generate">
+                <source>Set random value</source>
+            </trans-unit>
             <trans-unit id="p.author.title">
                 <source>Author detail</source>
             </trans-unit>
@@ -73,6 +85,9 @@
             </trans-unit>
             <trans-unit id="t.demo.field.overrideField.desc">
                 <source>This field was added in the table override file.</source>
+            </trans-unit>
+            <trans-unit id="t.advanced.title">
+                <source>Demo-Record (Advanced Options)</source>
             </trans-unit>
             <trans-unit id="t.quote.title">
                 <source>Quote</source>

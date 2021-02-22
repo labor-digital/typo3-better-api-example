@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.02.19 at 14:23
+ * Last modified: 2021.02.22 at 18:12
  */
 
 declare(strict_types=1);
@@ -23,37 +23,23 @@ declare(strict_types=1);
 namespace LaborDigital\Typo3BetterApiExample\Command;
 
 
+use LaborDigital\T3BA\Core\Di\ContainerAwareTrait;
 use LaborDigital\T3BA\ExtConfigHandler\Command\ConfigureCliCommandInterface;
+use LaborDigital\Typo3BetterApiExample\Configuration\Table\AdvancedTable;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Class DemoCommand
- *
- * Configuring a command is easy as pie! Create a class in /Classes/Command,
- * let it extend the "Command" class, provided by the symfony console component and
- * also implement the ConfigureCliCommandInterface. The command configuration is done using
- * the "configure()" method provided by the command. All information are provided to the TYPO3 implementation.
- *
- * @package LaborDigital\Typo3BetterApiExample\Command
- */
-class DemoCommand extends Command implements ConfigureCliCommandInterface
+class TmpCommand extends Command implements ConfigureCliCommandInterface
 {
-    /**
-     * @inheritDoc
-     */
-    protected function configure()
-    {
-        $this->setDescription('A simple command that could do whatever you want, imagine the possibilities!');
-    }
+    use ContainerAwareTrait;
 
     /**
      * @inheritDoc
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello world, this is a demo command :D');
+        $this->cs()->dataHandler->getRecordDataHandler(AdvancedTable::class)->makeNew([], 5);
 
         return 0;
     }

@@ -254,6 +254,7 @@ class DemoTable implements ConfigureTcaTableInterface
         // Please note, that columns may be added but not retrieved or checked for on the table schema.
         // This is, because the column definitions depend on the table configuration object
         // and may therefore differ from the initial state the table had when it was loaded.
+
         $table->getSchema()
             // This is a normal Doctrine Table object, so you can perform any operation you like.
               ->addIndex(['special_field'])

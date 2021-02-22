@@ -39,6 +39,10 @@ class Pids implements ConfigurePidsInterface
         $collector->setMultiple([
             'storage' => [
                 'article' => 5,
+                // Currently we store authors in the same folder like articles,
+                // but changing that would be trivial in the future. Move the records an adjust the
+                // pid here once and you are done.
+                'author'  => 5,
             ],
             'page'    => [
                 'article' => [
