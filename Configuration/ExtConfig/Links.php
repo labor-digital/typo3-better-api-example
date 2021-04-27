@@ -77,7 +77,8 @@ class Links implements ConfigureLinksInterface
                     // open the correct storage pid for us when a user clicks on the "article" tab.
                     // Therefore we provide a base/storage pid using a reference in our pids
                     'basePid' => '@pid.storage.article',
-                ]);
+                ]
+            );
 
         // Next we register a simple definition that will always point to our article list pid
         $collector->getDefinition('articleList')

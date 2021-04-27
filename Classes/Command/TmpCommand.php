@@ -39,7 +39,7 @@ class TmpCommand extends Command implements ConfigureCliCommandInterface
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->cs()->dataHandler->getRecordDataHandler(AdvancedTable::class)->makeNew([], 5);
+        $this->cs()->dataHandler->getRecordDataHandler(AdvancedTable::class)->save([], 5);
 
         return 0;
     }

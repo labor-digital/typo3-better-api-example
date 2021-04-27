@@ -175,7 +175,7 @@ class PopulatorCommand extends Command implements ConfigureCliCommandInterface
             $then = $then->modify('+' . round(random_int(1, 12)) . ' months');
 
             // Create the author record
-            $handler->makeNew([
+            $handler->save([
                 'first_name' => static::FIRST_NAMES[array_rand(static::FIRST_NAMES)],
                 'last_name'  => static::LAST_NAMES[array_rand(static::LAST_NAMES)],
                 'birthday'   => $then->formatSqlDate(),

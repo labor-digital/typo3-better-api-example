@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\Typo3BetterApiExample\Controller;
 
 
-use LaborDigital\T3BA\ExtBase\Controller\BetterActionController;
+use LaborDigital\T3BA\ExtBase\Controller\BetterContentActionController;
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
 use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
@@ -33,7 +33,7 @@ use LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author;
 use LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository;
 use TYPO3\CMS\Core\DependencyInjection\NotFoundException;
 
-class AuthorController extends BetterActionController
+class AuthorController extends BetterContentActionController
     implements ConfigurePluginInterface, BackendPreviewRendererInterface
 {
     /**

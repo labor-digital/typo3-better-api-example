@@ -32,6 +32,30 @@
             <trans-unit id="wizard.button.generate">
                 <source>Set random value</source>
             </trans-unit>
+            <trans-unit id="ce.button.title">
+                <source>Button</source>
+            </trans-unit>
+            <trans-unit id="ce.button.desc">
+                <source>A simple button to create a link</source>
+            </trans-unit>
+            <trans-unit id="ce.button.field.label">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="ce.button.field.icon">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="ce.button.field.type">
+                <source>Button-Type</source>
+            </trans-unit>
+            <trans-unit id="ce.button.field.type.default">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="ce.button.field.type.cta">
+                <source>CTA</source>
+            </trans-unit>
+            <trans-unit id="ce.button.field.link">
+                <source>Link-Target</source>
+            </trans-unit>
             <trans-unit id="p.author.title">
                 <source>Author detail</source>
             </trans-unit>

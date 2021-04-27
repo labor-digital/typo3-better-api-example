@@ -39,12 +39,13 @@ class AdvancedTable implements ConfigureTcaTableInterface
      */
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
+        // @todo rename parent() to getExtConfigContext() to follow the naming schema
+//        $table->getContext()->getExtConfigContext()->getTypoContext()->getRootContext();
+
         // This is an example of some advanced usage scenarios that are implemented in T3BA
         // and might be new if you are normally work with the TYPO3 core.
         $table->setTitle('exampleBe.t.advanced.title');
-
         $table->setLabelColumn('title');
-
         $type = $table->getType();
 
         $type->getTab(0)->addMultiple(static function () use ($type) {

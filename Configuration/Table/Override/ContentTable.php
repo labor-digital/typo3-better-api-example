@@ -52,5 +52,6 @@ class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderIn
         // This allows extBase to map this model to the correct table - no typoScript needed :D
         $table->addModelClass(\LaborDigital\Typo3BetterApiExample\Domain\Model\Content::class);
 
+
     }
 }
