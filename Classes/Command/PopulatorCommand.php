@@ -1,5 +1,4 @@
-<?php /** @noinspection NonSecureArrayRandUsageInspection */
-/*
+<?php /*
  * Copyright 2021 LABOR.digital
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.02.21 at 20:44
+ * Last modified: 2021.04.29 at 22:21
  */
-
+/** @noinspection NonSecureArrayRandUsageInspection */
 declare(strict_types=1);
 
 
