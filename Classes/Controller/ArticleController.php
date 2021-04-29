@@ -102,7 +102,7 @@ class ArticleController extends BetterContentActionController
     public function listAction()
     {
         // We use our article repository to retrieve a list of all articles to show.
-        $this->view->assign('articles', $this->repository->findForListPlugin($this->settings, $this->data));
+        $this->view->assign('articles', $this->repository->findForListPlugin($this->settings, $this->getData()));
     }
 
     public function detailAction(?Article $article)
@@ -119,8 +119,9 @@ class ArticleController extends BetterContentActionController
      */
     public function renderBackendPreview(BackendPreviewRendererContext $context)
     {
-        // As you might have noticed, we use the ExtBaseBackendPreviewRendererTrait in this controller.
-        // It should work for every extbase controller out of the box and provide you with some additional features.
+        // Whenever you use BetterContentActionController you automatically have access to the
+        // ContentControllerBackendPreviewTrait trait, which will also work on its own for every extbase controller
+        // out of the box and provide you with some additional features.
 
         // Your first option is to load a fluid view directly in this method
         // and provide it with the required arguments. To do that simply use the following getFluidView().
@@ -150,7 +151,12 @@ class ArticleController extends BetterContentActionController
         // Example:
         return $this->simulateVariantRequest([
             'default' => 'list',
-            'detail'  => 'detail',
+
+            // The detail action, requires an $article to be set (done by our route enhancer),
+            // otherwise it will throw a not found exception. For a backend preview, of a detail page
+            // it does not make sense to map a static article, therefore we disable the request by
+            // setting the detail variant to false.
+            'detail'  => false,
         ]);
     }
 

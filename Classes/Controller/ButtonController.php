@@ -62,12 +62,12 @@ class ButtonController extends BetterContentActionController
 
             $type->getField('label')
                  ->setLabel('exampleBe.ce.button.field.label')
-                 ->applyPreset()->input();
+                 ->applyPreset()->input(['required']);
 
             $type->getField('link')
                  ->setLabel('exampleBe.ce.button.field.link')
                  ->applyPreset()
-                 ->link();
+                 ->link(['required', 'allowLinkSets']);
 
             $type->getField('icon')
                  ->setLabel('exampleBe.ce.button.field.icon')
@@ -88,8 +88,8 @@ class ButtonController extends BetterContentActionController
     {
         return $context->getUtils()->renderFieldList([
             'label',
-            'text',
-            'file_reference',
+            'link',
+            'icon',
         ]);
     }
 

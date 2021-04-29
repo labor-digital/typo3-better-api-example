@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection NonSecureArrayRandUsageInspection */
 /*
  * Copyright 2021 LABOR.digital
  *
@@ -192,6 +192,7 @@ class PopulatorCommand extends Command implements ConfigureCliCommandInterface
         // therefore we use the data handler service and its processData() method.
         // It works exactly as you know it from the data handler but has a nicer interface to work with
         $handler = $cs->dataHandler;
+
         // Again, like in the author population we receive the pid where we want to store our articles
         $storagePid = $cs->typoContext->pid()->get('storage.article');
 
@@ -217,7 +218,8 @@ class PopulatorCommand extends Command implements ConfigureCliCommandInterface
                 ];
             }
 
-            $headline = static::WORDS[array_rand(static::WORDS)] . ' ' . static::WORDS[array_rand(static::WORDS)]
+            $headline = static::WORDS[array_rand(static::WORDS)] . ' '
+                        . static::WORDS[array_rand(static::WORDS)]
                         . ' article';
 
             // ProcessData is you go-to solution to create or modify records with the data handler.

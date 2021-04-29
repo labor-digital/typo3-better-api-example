@@ -47,11 +47,39 @@ class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderIn
      */
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
-        // We don't really want to change anything on the tt_content table,
-        // but we want to tell the table, that our "Content" model, should be considered part of it.
-        // This allows extBase to map this model to the correct table - no typoScript needed :D
+        // We want to tell the table, that our "Content" model, should be considered part of it.
+        // This allows extBase to map this model to the correct table when used as relation in extBase models,
+        // no typoScript needed :D
         $table->addModelClass(\LaborDigital\Typo3BetterApiExample\Domain\Model\Content::class);
 
+        // Let's also remove some clutter fields we don't want from the form,
+        // we do this for every type that exists
+        foreach ($table->getLoadedTypes() as $type) {
+            $type->removeChildren([
+                // You can either remove single fields by their id
+                'header_link',
+                'subheader',
+                'categories',
+                'rowDescription',
 
+                // Or, if you prefix the id of the palette with an underscore
+                // you can remove a whole palette -> You should try to prefer the removal
+                // of palettes over single fields in this case.
+                '_header',
+                '_headers',
+                '_link',
+                '_frames',
+                '_appearanceLinks',
+            ]);
+
+            // Now the tt_content form is much less cluttered, let's move the "Plugin" fields to
+            // the "general tab", they are only shown when "CType" is "list", so this additionally cleans
+            // up the form for your editors
+            // "Plugin" is the second tab, so use "id" 1 and move all children to the bottom of tab 0
+            // (Default value of moveTo())
+            foreach ($type->getTab(1)->getChildren() as $child) {
+                $child->moveTo();
+            }
+        }
     }
 }
