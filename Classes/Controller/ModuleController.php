@@ -43,17 +43,17 @@ class ModuleController extends BetterActionController
     implements ConfigureModuleInterface, LoggerAwareInterface
 {
     use LoggerAwareTrait;
-
+    
     /**
      * @var \LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService
      */
     protected $flashMessageService;
-
+    
     public function __construct(FlashMessageRenderingService $flashMessageService)
     {
         $this->flashMessageService = $flashMessageService;
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -61,36 +61,36 @@ class ModuleController extends BetterActionController
     {
         $configurator->setSection('file');
     }
-
+    
     public function indexAction()
     {
         // Show a nice flash message if we don't have any set
         if (! $this->flashMessageService->hasMessages()) {
             $this->flashMessageService->addInfo('Hello there, this is a demo module :)');
         }
-
+        
         $this->view->assignMultiple(
             [
-                'title'   => 'Pages Overview',
+                'title' => 'Pages Overview',
                 'records' => $this->getService(BackendRenderingService::class)
                                   ->renderDatabaseRecordList('pages', ['title'], ['pid' => 0]),
             ]
         );
     }
-
+    
     public function specialAction()
     {
         $this->flashMessageService->addInfo('This is a special action which was logged!');
-
+        
         // The matching logger was registered in the CommonConfig ext config file
         $this->logger->info('Special action was opened in the backend');
     }
-
+    
     public function messageAction()
     {
         $this->getService(FlashMessageRenderingService::class)
              ->addOk('You clicked on a button :)', 'You did it!', ['storeInSession']);
-
+        
         // We redirect here, so we can use the "storeInSession" flag.
         $this->redirect('index');
     }

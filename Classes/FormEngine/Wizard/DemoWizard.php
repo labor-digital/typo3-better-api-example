@@ -41,7 +41,7 @@ class DemoWizard extends AbstractCustomWizard
     <button class="btn btn-default">{{translate "exampleBe.wizard.button.generate"}}</button>
 </div>
 HTML;
-
+    
     /**
      * @inheritDoc
      */
@@ -49,8 +49,8 @@ HTML;
     {
         $this->context->registerScript('EXT:typo3_better_api_example/Resources/Public/Assets/DemoWizard/demoWizard.js');
         $this->context->registerStylesheet('EXT:typo3_better_api_example/Resources/Public/Assets/DemoWizard/demoWizard.css');
-
+        
         return $this->renderTemplate(static::TPL);
     }
-
+    
 }

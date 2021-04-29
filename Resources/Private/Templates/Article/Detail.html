@@ -25,7 +25,7 @@
         <f:if condition="{article.subHeadline}">
             <h4>{article.subHeadline}</h4>
         </f:if>
-
+        
         <f:if condition="{article.categories}">
             <ul>
                 <f:for each="{article.categories}" as="category">
@@ -33,7 +33,7 @@
                 </f:for>
             </ul>
         </f:if>
-
+        
         <f:for each="{article.content}" as="el">
             <div>
                 <f:if condition="{el.headline}">
@@ -44,7 +44,7 @@
                 </span>
             </div>
         </f:for>
-
+        
         <h4>
             <f:translate key="p.article.author"/>
         </h4>
@@ -58,7 +58,7 @@
                 </f:else>
             </f:if>
         </f:for>
-
+        
         <f:render partial="BackToArticleList"/>
     </div>
 </article>

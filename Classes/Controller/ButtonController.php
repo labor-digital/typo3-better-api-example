@@ -40,13 +40,14 @@ class ButtonController extends BetterContentActionController
     public static function configureContentElement(
         ContentElementConfigurator $configurator,
         ExtConfigContext $context
-    ): void {
+    ): void
+    {
         $configurator
             ->setTitle('exampleBe.ce.button.title')
             ->setDescription('exampleBe.ce.button.desc')
             ->setBackendListLabelRenderer(['label', 'link']);
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -57,30 +58,30 @@ class ButtonController extends BetterContentActionController
                  ->setLabel('exampleBe.ce.button.field.type')
                  ->applyPreset()->select([
                     'default' => 'exampleBe.ce.button.field.type.default',
-                    'cta'     => 'exampleBe.ce.button.field.type.cta',
+                    'cta' => 'exampleBe.ce.button.field.type.cta',
                 ]);
-
+            
             $type->getField('label')
                  ->setLabel('exampleBe.ce.button.field.label')
                  ->applyPreset()->input(['required']);
-
+            
             $type->getField('link')
                  ->setLabel('exampleBe.ce.button.field.link')
                  ->applyPreset()
                  ->link(['required', 'allowLinkSets']);
-
+            
             $type->getField('icon')
                  ->setLabel('exampleBe.ce.button.field.icon')
                  ->applyPreset()
                  ->relationImage(['maxItems' => 1, 'allowList' => 'svg']);
         });
     }
-
+    
     public function indexAction(): string
     {
         return 'Button :D';
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -92,5 +93,5 @@ class ButtonController extends BetterContentActionController
             'icon',
         ]);
     }
-
+    
 }

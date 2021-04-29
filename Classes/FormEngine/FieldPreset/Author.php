@@ -28,7 +28,7 @@ use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\AuthorTable a
 
 class Author extends AbstractFieldPreset
 {
-
+    
     /**
      * Defines the field to allow the selection for author records
      *
@@ -38,7 +38,7 @@ class Author extends AbstractFieldPreset
     {
         // We set the default max items value to 1 if not provided differently by the author
         $options['maxItems'] = $options['maxItems'] ?? 1;
-
+        
         // A preset can also utilize other, existing presets to create convenience wrappers, like this one
         $this->field->applyPreset()->relationGroup(AuthorTable::class, $options);
     }

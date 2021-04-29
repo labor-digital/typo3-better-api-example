@@ -30,7 +30,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
 class ArticleRepository extends BetterRepository
 {
-
+    
     /**
      * Returns the list of all articles that can be found
      *
@@ -46,7 +46,7 @@ class ArticleRepository extends BetterRepository
         // The better query will take a look at that field and automatically create the required pid constraints for you.
         return $this->getPreparedQuery($settings, $row)->getAll();
     }
-
+    
     /**
      * Returns a list of all articles by this author
      *
@@ -58,7 +58,7 @@ class ArticleRepository extends BetterRepository
     {
         return $this->getQuery()->withWhere(['author has' => $author])->withOrder('published', 'desc')->getAll();
     }
-
+    
     /**
      * This method is not required but it is a nice example on how you can use the ext base settings
      * to pre-configure a query object based on global rules.
@@ -74,7 +74,7 @@ class ArticleRepository extends BetterRepository
         if ($settings['sorting']) {
             $query = $query->withOrder($settings['sorting'], $settings['direction'] ?? 'desc');
         }
-
+        
         return $query;
     }
 }

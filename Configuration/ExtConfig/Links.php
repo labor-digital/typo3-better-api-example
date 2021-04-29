@@ -44,7 +44,7 @@ class Links implements ConfigureLinksInterface
             // You could also simply put in a numeric pid here, but using the global reference index
             // of pids it becomes trivial to change pids on a later date.
                   ->setPid('@pid.page.home');
-
+        
         // To register a new link set, we simply require one using getSet() from the collector
         // the syntax is quite similar to the T3BA TypoLink context, however, the collector is mutable,
         // so you can simply chain the methods like so:
@@ -79,11 +79,11 @@ class Links implements ConfigureLinksInterface
                     'basePid' => '@pid.storage.article',
                 ]
             );
-
+        
         // Next we register a simple definition that will always point to our article list pid
         $collector->getDefinition('articleList')
                   ->setPid('@pid.page.article.list');
-
+        
         // Similar to the article detail we register a definition for an author detail page
         $collector->getDefinition('authorDetail')
                   ->setPid('@pid.page.author.detail')
@@ -91,5 +91,5 @@ class Links implements ConfigureLinksInterface
                   ->setControllerClass(AuthorController::class)
                   ->setControllerAction('detail');
     }
-
+    
 }

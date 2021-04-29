@@ -46,17 +46,17 @@ class DemoMiddleware implements MiddlewareInterface
      * @var string|null
      */
     protected $message;
-
+    
     /**
      * @var string|null
      */
     protected $route;
-
+    
     /**
      * @var \Psr\Http\Message\ResponseFactoryInterface
      */
     protected $responseFactory;
-
+    
     /**
      * DemoMiddleware constructor.
      *
@@ -67,10 +67,10 @@ class DemoMiddleware implements MiddlewareInterface
     public function __construct(?string $message, ?string $route, ResponseFactoryInterface $responseFactory)
     {
         $this->responseFactory = $responseFactory;
-        $this->message         = $message;
-        $this->route           = $route;
+        $this->message = $message;
+        $this->route = $route;
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -79,8 +79,8 @@ class DemoMiddleware implements MiddlewareInterface
         if (str_starts_with($request->getUri()->getPath(), $this->route)) {
             return $this->responseFactory->createResponse()->withBody(Utils::streamFor($this->message));
         }
-
+        
         return $handler->handle($request);
     }
-
+    
 }

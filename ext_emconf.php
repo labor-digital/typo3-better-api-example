@@ -18,33 +18,33 @@
  */
 /** @var $_EXTKEY string */
 $EM_CONF[$_EXTKEY] = [
-    "title"            => "Better API - Example",
-    "description"      => "A simple example extension for the better api extension",
-    "author"           => "Martin Neundorfer",
-    "author_email"     => "m.neundorfer@labor.digital",
-    "category"         => "misc",
-    "author_company"   => "LABOR.digital",
-    "shy"              => "",
-    "conflicts"        => "",
-    "priority"         => "",
-    "module"           => "",
-    "state"            => "alpha",
-    "internal"         => "",
-    "uploadfolder"     => 0,
-    "createDirs"       => "",
-    "modify_tables"    => "",
+    "title" => "Better API - Example",
+    "description" => "A simple example extension for the better api extension",
+    "author" => "Martin Neundorfer",
+    "author_email" => "m.neundorfer@labor.digital",
+    "category" => "misc",
+    "author_company" => "LABOR.digital",
+    "shy" => "",
+    "conflicts" => "",
+    "priority" => "",
+    "module" => "",
+    "state" => "alpha",
+    "internal" => "",
+    "uploadfolder" => 0,
+    "createDirs" => "",
+    "modify_tables" => "",
     "clearCacheOnLoad" => 1,
-    "lockType"         => "",
-    "version"          => "10.0.0",
-    "constraints"      => [
-        "depends"   => [
+    "lockType" => "",
+    "version" => "10.0.0",
+    "constraints" => [
+        "depends" => [
             "typo3" => "10.0.0-10.99.99",
         ],
         "conflicts" => [
         ],
-        "suggests"  => [
+        "suggests" => [
         ],
     ],
-    "suggests"         => [
+    "suggests" => [
     ],
 ];

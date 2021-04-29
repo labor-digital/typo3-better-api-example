@@ -17,27 +17,27 @@
   -->
 
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
-        <header/>
-
-        <body>
-            <trans-unit id="g.backHome">
-                <source>Go back home</source>
-            </trans-unit>
-            <trans-unit id="g.articleListLink">
-                <source>Go to article list</source>
-            </trans-unit>
-
-            <trans-unit id="p.author.birthday">
-                <source>Birthday</source>
-            </trans-unit>
-
-            <trans-unit id="p.article.author">
-                <source>Author</source>
-            </trans-unit>
-            <trans-unit id="p.article.author">
-                <source>Author</source>
-            </trans-unit>
-        </body>
-    </file>
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
+		<header/>
+		
+		<body>
+			<trans-unit id="g.backHome">
+				<source>Go back home</source>
+			</trans-unit>
+			<trans-unit id="g.articleListLink">
+				<source>Go to article list</source>
+			</trans-unit>
+			
+			<trans-unit id="p.author.birthday">
+				<source>Birthday</source>
+			</trans-unit>
+			
+			<trans-unit id="p.article.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="p.article.author">
+				<source>Author</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>

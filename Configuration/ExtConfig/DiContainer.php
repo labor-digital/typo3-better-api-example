@@ -45,9 +45,10 @@ class DiContainer extends DefaultDiConfig
         ContainerConfigurator $configurator,
         ContainerBuilder $containerBuilder,
         ExtConfigContext $context
-    ): void {
+    ): void
+    {
         parent::configure($configurator, $containerBuilder, $context);
-
+        
         // We want to pass some configuration to our demo middleware
         // This can be done using the dependency injection container configuration
         // For additional configuration we could also register a factory method here
@@ -55,5 +56,5 @@ class DiContainer extends DefaultDiConfig
                          ->addArgument('Hello world! How are you today?')
                          ->addArgument('/say-hello');
     }
-
+    
 }

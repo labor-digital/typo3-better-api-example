@@ -33,7 +33,7 @@ use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
 class PluginBController extends BetterContentActionController
     implements ConfigurePluginInterface, BackendPreviewRendererInterface
 {
-
+    
     /**
      * @inheritDoc
      */
@@ -42,14 +42,14 @@ class PluginBController extends BetterContentActionController
         $configurator
             ->setTitle('exampleBe.p.pluginB.title')
             ->setDescription('exampleBe.p.pluginB.desc');
-
+        
         // As you see, we don't provide any actions to the configurator,
         // but the script will automatically find all public methods ending with "Action" and register
         // them as viable actions for you. The order of the definition inside the controller class
         // defines the order in the actions array.
         // This is inferred automatically: $configurator->setActions(['index']);
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -63,11 +63,11 @@ class PluginBController extends BetterContentActionController
                         $context->getUtils()->renderFieldList(['header', 'list_type', 'sys_language_uid'])
                     );
     }
-
+    
     public function indexAction()
     {
         dbge('INDEX');
     }
-
-
+    
+    
 }

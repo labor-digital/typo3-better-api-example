@@ -39,7 +39,7 @@ class PagesTable implements ConfigureTcaTableInterface, TcaTableNameProviderInte
         // If we would not define this here, the logic would automatically namespace the table to our extension
         return 'pages';
     }
-
+    
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
         $type = $table->getType(1);
@@ -47,5 +47,5 @@ class PagesTable implements ConfigureTcaTableInterface, TcaTableNameProviderInte
             $type->getField('my_field')->applyPreset()->input();
         });
     }
-
+    
 }

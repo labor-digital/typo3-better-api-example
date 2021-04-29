@@ -42,7 +42,7 @@ class Common implements ConfigureTranslationInterface,
     {
         $configurator->registerNamespace('exampleBe', 'locallang_be.xlf');
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -51,7 +51,7 @@ class Common implements ConfigureTranslationInterface,
         // Register a new log file writer for all logs written by this extension
         $configurator->registerFileLog(['key' => 'demoLog']);
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -60,8 +60,8 @@ class Common implements ConfigureTranslationInterface,
         // This will automatically register all view-helpers in your \Vendor\ExtKey\ViewHelpers namespace
         // as ExtKey:Example into the fluid eco-system
         $configurator->registerViewHelpers();
-
+        
     }
-
-
+    
+    
 }

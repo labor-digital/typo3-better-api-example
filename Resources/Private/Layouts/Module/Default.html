@@ -22,20 +22,20 @@
 >
 
 <be:moduleLayout>
-
+    
     <f:be.pageRenderer pageTitle="Demo Module"/>
-
+    
     <be:moduleLayout.menu identifier="DemoModuleMenu">
         <be:moduleLayout.menuItem label="Index"
                                   uri="{f:uri.action(action: 'index')}"/>
         <be:moduleLayout.menuItem label="Special"
                                   uri="{f:uri.action(action: 'special')}"/>
     </be:moduleLayout.menu>
-
+    
     <f:flashMessages/>
-
+    
     <div style="padding-top: 10px;"></div>
-
+    
     <f:render section="content"/>
 
 </be:moduleLayout>

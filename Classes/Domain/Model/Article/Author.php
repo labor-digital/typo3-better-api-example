@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\Typo3BetterApiExample\Domain\Model\Article;
 
 
+use DateTime;
 use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
 
 class Author extends BetterEntity
@@ -31,17 +32,17 @@ class Author extends BetterEntity
      * @var string
      */
     protected $firstName;
-
+    
     /**
      * @var string
      */
     protected $lastName;
-
+    
     /**
      * @var \DateTime
      */
     protected $birthday;
-
+    
     /**
      * @return string
      */
@@ -49,7 +50,7 @@ class Author extends BetterEntity
     {
         return $this->firstName;
     }
-
+    
     /**
      * @return string
      */
@@ -57,11 +58,11 @@ class Author extends BetterEntity
     {
         return $this->lastName;
     }
-
+    
     /**
      * @return \DateTime
      */
-    public function getBirthday(): \DateTime
+    public function getBirthday(): DateTime
     {
         return $this->birthday;
     }

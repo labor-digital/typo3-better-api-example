@@ -38,31 +38,31 @@ class Backend implements ConfigureBackendInterface
         // Just point it to the file you want to load and it will handle the rest for you.
         // You can either provide an absolute url, a relative url (starting with "/") or
         // a path relative to your extension.
-
+        
         // Pro-tip: All config options allow you to work with placeholders for your {{extKey}}, {{vendor}} and
         // {{extKeyWithVendor}}. This way, you can keep your options relative to the extension without hard-coding the
         // values, or relying on $context->getExtKey() and friends
         $configurator->registerCss('EXT:{{extKey}}/Resources/Public/Assets/backend.css');
-
+        
         // This works for javascript as well
         $configurator->registerJs('EXT:{{extKey}}/Resources/Public/Assets/backend.js');
-
+        
         // You can also configure the RTE directly in your PHP code, without messing with yml files.
         // By default you start configuring the "default" preset, but can always switch to a different one
         // using the "preset" option. In a simple use-case like this you can start at the "editor.config" node.
         // The script will take care of including the processing.yaml, Base.yaml and Plugins.yaml for you.
         // For advanced configuration scenarios you can also put in a config containing "editor" => ["config" => ...]
         $configurator->registerRteConfig([
-            'format_tags'      => 'p',
-            'autoParagraph'    => false,
-            'fillEmptyBlocks'  => false,
-            'removePlugins'    => 'magicline,pagebreak,image',
-            'extraPlugins'     => 'indentblock',
-            'contentsCss'      => [
+            'format_tags' => 'p',
+            'autoParagraph' => false,
+            'fillEmptyBlocks' => false,
+            'removePlugins' => 'magicline,pagebreak,image',
+            'extraPlugins' => 'indentblock',
+            'contentsCss' => [
                 'EXT:rte_ckeditor/Resources/Public/Css/contents.css',
             ],
             'removeFormatTags' => 'b,big,cite,code,del,dfn,em,font,i,ins,kbd,q,s,samp,small,span,strike,strong,sub,sup,tt,u,var,div',
-            'toolbar'          => [
+            'toolbar' => [
                 ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],
                 ['Undo', 'Redo',],
                 ['Link', 'Unlink',],
@@ -81,5 +81,5 @@ class Backend implements ConfigureBackendInterface
             ],
         ]);
     }
-
+    
 }

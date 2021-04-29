@@ -29,37 +29,37 @@ use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 
 class ArticleTable implements ConfigureTcaTableInterface
 {
-
+    
     /**
      * @inheritDoc
      */
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
         $table->setTitle('exampleBe.t.article.title');
-
+        
         // Make sure this table always is shown in front of "tt_content" records
         $table->setListPosition('tt_content');
-
+        
         $table->setLabelColumn('headline');
-
+        
         $type = $table->getType();
-
+        
         $type->getTab(0)->addMultiple(static function () use ($type) {
             $type->getField('headline')
                  ->setLabel('exampleBe.t.article.field.headline')
                  ->applyPreset()->input(['required']);
-
+            
             $type->getField('sub_headline')
                  ->setLabel('exampleBe.t.article.field.subHeadline')
                  ->applyPreset()->input();
-
+            
             // To create our own route enhancer that reads a link for this article,
             // we have to create a slug field. We create it and let it generate the content based
             // on the headline field
             $type->getField('slug')
                  ->setLabel('exampleBe.t.article.field.slug')
                  ->applyPreset()->slug(['headline'], ['prefix' => '/article/']);
-
+            
             // In our list action we want to show a short teaser text to get the attention of a user
             $type->getField('teaser_text')
                  ->setLabel('exampleBe.t.article.field.teaserText')
@@ -67,7 +67,7 @@ class ArticleTable implements ConfigureTcaTableInterface
                 // backend. They are registered like a field label.
                  ->setDescription('exampleBe.t.article.field.teaserText.desc')
                  ->applyPreset()->textArea(['maxLength' => 512]);
-
+            
             // We want to define a list of authors for our article. To define the relation we could either
             // use the selectGroup() preset to do that. However, we created a custom preset
             // to select an author in the following file:
@@ -76,26 +76,26 @@ class ArticleTable implements ConfigureTcaTableInterface
             $type->getField('author')
                  ->setLabel('exampleBe.t.article.field.author')
                  ->applyPreset()->selectAuthor(['required', 'maxItems' => 4]);
-
+            
             // We want our article to have a timestamp that show's when it was published.
             // So we use a date preset and we also allow the selection of a time using the "withTime" flag.
             $type->getField('published')
                  ->setLabel('exampleBe.t.article.field.published')
                  ->applyPreset()->date(['withTime', 'required']);
         });
-
+        
         // We create a new tab that is sorted after "general" that holds our content options for this article
         // We store it in a variable, because we need it again later as a reference when we add additional tabs
         $contentTab = $type->getNewTab()
                            ->moveTo('0')
                            ->setLabel('exampleBe.t.article.tab.content');
-
+        
         $contentTab->addMultiple(static function () use ($type) {
             // We create a new field that can hold content elements as IRRE field
             $type->getField('content')
                  ->setLabel('exampleBe.t.article.field.content')
                  ->applyPreset()->inlineContent();
-
+            
             // We also want a list of quotes from other authors
             $type->getField('quotes')
                  ->setLabel('exampleBe.t.article.field.quotes')
@@ -103,7 +103,7 @@ class ArticleTable implements ConfigureTcaTableInterface
                 // table name. The internal logic will resolve the correct table name from that.
                  ->applyPreset()->inline(QuoteTable::class);
         });
-
+        
         // We want to create
         $type->getNewTab()
              ->moveTo((string)$contentTab->getId())
@@ -114,24 +114,24 @@ class ArticleTable implements ConfigureTcaTableInterface
                  $type->getField('banner_image')
                       ->setLabel('exampleBe.t.article.field.bannerImage')
                       ->applyPreset()->relationImage([
-                         'maxItems'         => 1,
+                         'maxItems' => 1,
                          // We don't want either the "description" or the "link" field to be
                          // shown in the fal field, so we can remove them using the options
                          'disableFalFields' => ['description', 'link'],
                          // We also want some specific crop formats that can be used.
                          // You can use either the TYPO3 default definition,
                          // or this simplified definition to create your crop variants
-                         'cropVariants'     => [
+                         'cropVariants' => [
                              [
-                                 'title'        => 'exampleBe.t.article.field.bannerImage',
+                                 'title' => 'exampleBe.t.article.field.bannerImage',
                                  'aspectRatios' => [
                                      '16:9' => 'exampleBe.t.article.field.bannerImage.crop.wide',
-                                     '1:1'  => 'exampleBe.t.article.field.bannerImage.crop.quadratic',
+                                     '1:1' => 'exampleBe.t.article.field.bannerImage.crop.quadratic',
                                  ],
                              ],
                          ],
                      ]);
-
+            
                  // Now we want to add some categories to our article,
                  // we can do this using TYPO3's categorization system
                  $type->getField('categories')
@@ -143,9 +143,9 @@ class ArticleTable implements ConfigureTcaTableInterface
                      // We use "sideBySide" because of personal preference. You don't need this flag
                      // if you want to render a normal tree instead
                       ->applyPreset()->categorize(['sideBySide']);
-
+            
              });
-
+        
     }
-
+    
 }

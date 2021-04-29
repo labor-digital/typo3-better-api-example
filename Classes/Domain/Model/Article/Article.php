@@ -30,52 +30,52 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Article extends BetterEntity
 {
-
+    
     /**
      * @var string
      */
     protected $headline;
-
+    
     /**
      * @var string
      */
     protected $subHeadline;
-
+    
     /**
      * @var string
      */
     protected $teaserText;
-
+    
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author>
      */
     protected $author;
-
+    
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\Typo3BetterApiExample\Domain\Model\Content>
      */
     protected $content;
-
+    
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Quote>
      */
     protected $quotes;
-
+    
     /**
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
     protected $bannerImage;
-
+    
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
      */
     protected $categories;
-
+    
     /**
      * @var \DateTime
      */
     protected $published;
-
+    
     /**
      * @return string
      */
@@ -83,7 +83,7 @@ class Article extends BetterEntity
     {
         return $this->headline;
     }
-
+    
     /**
      * @return string
      */
@@ -91,7 +91,7 @@ class Article extends BetterEntity
     {
         return $this->subHeadline;
     }
-
+    
     /**
      * @return string
      */
@@ -99,7 +99,7 @@ class Article extends BetterEntity
     {
         return $this->teaserText;
     }
-
+    
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
@@ -107,7 +107,7 @@ class Article extends BetterEntity
     {
         return $this->author;
     }
-
+    
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
@@ -115,7 +115,7 @@ class Article extends BetterEntity
     {
         return $this->content;
     }
-
+    
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
@@ -123,7 +123,7 @@ class Article extends BetterEntity
     {
         return $this->quotes;
     }
-
+    
     /**
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
@@ -131,7 +131,7 @@ class Article extends BetterEntity
     {
         return $this->bannerImage;
     }
-
+    
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
@@ -139,7 +139,7 @@ class Article extends BetterEntity
     {
         return $this->categories;
     }
-
+    
     /**
      * @return \DateTime
      */
@@ -147,5 +147,5 @@ class Article extends BetterEntity
     {
         return $this->published;
     }
-
+    
 }

@@ -63,7 +63,7 @@ class DemoField extends AbstractCustomField
     <button class="demoField__button demoField__button--on btn btn-default">{{translate "exampleBe.field.demoField.button.on"}}</button>
 </div>
 HTML;
-
+    
     /**
      * @inheritDoc
      */
@@ -72,14 +72,14 @@ HTML;
         // We want to register a data hook that gets triggered when this field is stored in the database
         // You can simply do this by adding this class as a handler on the field.
         $field->registerSaveHook(static::class);
-
+        
         // If we have a tca field we change both the type and the length of the database column.
         // By default custom fields are registered as a MEDIUMTEXT type in the database.
         if ($field instanceof TcaField) {
             $field->getColumn()->setType(new IntegerType())->setLength(4);
         }
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -89,13 +89,13 @@ HTML;
         // Those assets will only be used when the field is actually used.
         // Sadly we can't use the {{extKey}} placeholder here and therefore have to define the ext key statically here.
         $this->context->registerScript('EXT:typo3_better_api_example/Resources/Public/Assets/DemoField/demoField.js');
-
+        
         // We use the mustache template engine provided by T3BA to render our template.
         // You could also use renderFluidTemplate() here to render a fluid template instead.
         // Its a matter of personal preference
         return $this->renderTemplate(static::TPL);
     }
-
+    
     public function saveHook(CustomFieldDataHookContext $context): void
     {
         // As you can see, when you register a data hook on a custom field, you will receive the
@@ -105,5 +105,5 @@ HTML;
         $this->getService(FlashMessageRenderingService::class)
              ->addOk('Executed the save hook on field: ' . $context->getFieldName());
     }
-
+    
 }

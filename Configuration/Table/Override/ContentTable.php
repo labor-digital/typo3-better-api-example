@@ -27,6 +27,7 @@ use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Table\TcaTableNameProviderInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
+use LaborDigital\Typo3BetterApiExample\Domain\Model\Content;
 
 class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderInterface
 {
@@ -41,7 +42,7 @@ class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderIn
         // class in order for it to detect that you want to override the table name
         return 'tt_content';
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -50,8 +51,8 @@ class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderIn
         // We want to tell the table, that our "Content" model, should be considered part of it.
         // This allows extBase to map this model to the correct table when used as relation in extBase models,
         // no typoScript needed :D
-        $table->addModelClass(\LaborDigital\Typo3BetterApiExample\Domain\Model\Content::class);
-
+        $table->addModelClass(Content::class);
+        
         // Let's also remove some clutter fields we don't want from the form,
         // we do this for every type that exists
         foreach ($table->getLoadedTypes() as $type) {
@@ -61,7 +62,7 @@ class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderIn
                 'subheader',
                 'categories',
                 'rowDescription',
-
+                
                 // Or, if you prefix the id of the palette with an underscore
                 // you can remove a whole palette -> You should try to prefer the removal
                 // of palettes over single fields in this case.
@@ -71,7 +72,7 @@ class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderIn
                 '_frames',
                 '_appearanceLinks',
             ]);
-
+            
             // Now the tt_content form is much less cluttered, let's move the "Plugin" fields to
             // the "general tab", they are only shown when "CType" is "list", so this additionally cleans
             // up the form for your editors

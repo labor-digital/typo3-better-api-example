@@ -27,12 +27,12 @@ use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
 
 class Quote extends BetterEntity
 {
-
+    
     /**
      * @var string
      */
     protected $quote;
-
+    
     /**
      * @var \LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author
      */

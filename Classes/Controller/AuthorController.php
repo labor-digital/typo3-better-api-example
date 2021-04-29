@@ -40,7 +40,7 @@ class AuthorController extends BetterContentActionController
      * @var \LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository
      */
     protected $articleRepository;
-
+    
     /**
      * AuthorController constructor.
      *
@@ -50,7 +50,7 @@ class AuthorController extends BetterContentActionController
     {
         $this->articleRepository = $articleRepository;
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -59,17 +59,17 @@ class AuthorController extends BetterContentActionController
         $configurator->setTitle('exampleBe.p.author.title')
                      ->setDescription('exampleBe.p.author.desc');
     }
-
+    
     public function detailAction(?Author $author): void
     {
         if ($author === null) {
             throw new NotFoundException('You have to require an author for this action');
         }
-
+        
         $this->view->assign('author', $author);
         $this->view->assign('articles', $this->articleRepository->findForAuthor($author));
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -79,6 +79,6 @@ class AuthorController extends BetterContentActionController
         // author we can't create a meaningful backend preview
         $context->setShowDescription();
     }
-
-
+    
+    
 }

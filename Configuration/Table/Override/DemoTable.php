@@ -30,7 +30,7 @@ use LaborDigital\Typo3BetterApiExample\EventHandler\DataHook\DemoDataHooks;
 
 class DemoTable implements ConfigureTcaTableInterface
 {
-
+    
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
         // Overrides work exactly like in the TYPO3 core.
@@ -39,7 +39,7 @@ class DemoTable implements ConfigureTcaTableInterface
         // override some TCA values in Configuration/TCA/Overrides/demo.php
         // an then come back here to edit those changes using the table builder again.
         $table->registerSaveHook(DemoDataHooks::class, 'tableOverrideSaveHook');
-
+        
         // Everything in an override works in the same way a normal table would.
         // So you can simply grab a field in a type and do stuff with it.
         // You can add new types, modify existing types modify all of their children
@@ -54,5 +54,5 @@ class DemoTable implements ConfigureTcaTableInterface
               ])
               ->moveTo('0');
     }
-
+    
 }

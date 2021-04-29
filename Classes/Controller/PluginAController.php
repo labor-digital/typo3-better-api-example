@@ -36,7 +36,7 @@ use Neunerlei\TinyTimy\DateTimy;
 class PluginAController extends BetterContentActionController
     implements ConfigurePluginInterface, BackendPreviewRendererInterface, BackendListLabelRendererInterface
 {
-
+    
     /**
      * @inheritDoc
      */
@@ -48,7 +48,7 @@ class PluginAController extends BetterContentActionController
                      ->registerSaveHook(static::class)
                      ->registerFormHook(static::class);
     }
-
+    
     /**
      * This method is executed every time the data handler saves a record of this content element to the database
      *
@@ -56,11 +56,11 @@ class PluginAController extends BetterContentActionController
      */
     public function saveHook(DataHookContext $context): void
     {
-        $data           = $context->getData();
+        $data = $context->getData();
         $data['header'] = 'The current time is: ' . (new DateTimy())->formatDateAndTime();
         $context->setData($data);
     }
-
+    
     /**
      * This method is called every time the backend renders the form for this content element.
      * It allows you to hide, add or modify the record as well as the form fields on the fly.
@@ -69,11 +69,11 @@ class PluginAController extends BetterContentActionController
      */
     public function formHook(DataHookContext $context): void
     {
-        $data           = $context->getData();
+        $data = $context->getData();
         $data['header'] = 'Here goes the timestamp when you saved the record...';
         $context->setData($data);
     }
-
+    
     /**
      * This method is used to render the backend preview of this content element.
      * You can either return a string to show, or set the body and header on the context object
@@ -86,7 +86,7 @@ class PluginAController extends BetterContentActionController
             'My Ext Base Plugin, can render it\'s own backend preview with ease!' .
             '<br>Last Modified: ' . (new DateTimy($context->getRow()['tstamp']))->formatDateAndTime());
     }
-
+    
     /**
      * This method allows you to render a string representation of this content element.
      * The string will be rendered to the redaction team in the list view
@@ -100,12 +100,12 @@ class PluginAController extends BetterContentActionController
     {
         return 'My list label: ' . $row['header'];
     }
-
+    
     public function indexAction()
     {
         return 'INDEX';
     }
-
+    
     public function detailAction()
     {
         return 'DETAIL';

@@ -33,7 +33,7 @@ use LaborDigital\Typo3BetterApiExample\Controller\AuthorController;
 
 class Routing implements ConfigureRoutingInterface
 {
-
+    
     /**
      * @inheritDoc
      */
@@ -46,19 +46,19 @@ class Routing implements ConfigureRoutingInterface
         // By default, you have to configure your route enhancers in your site.yml file. Which means no auto-complete
         // for you and a lot of "copy-paste" work from all over the place. This configuration option tries to ease the
         // process of creating enhancers.
-
+        
         // Before we begin, please note, that this option is "site based" meaning, different TYPO3 sites can have
         // different configuration classes. By default this class applies to ALL existing sites in your installation.
         // If you want to limit the configuration to specific sites you can use the "SiteKeyProviderInterface"
         // to define your constraints.
-
+        
         // Site based options can be spotted easily, as they provide you with the "SiteConfigContext" instead of the
         // normal "ExtConfigContext".
-
+        
         // Keep in mind, that, if your configuration applies to multiple sites it will be executed multiple times,
         // once for each site it applies to. Therefore you should keep it stateless.
         // You can always check which site gets currently configured using $context->getSite() or $context->getSiteKey()
-
+        
         // As you have seen we have our article list plugin on the root page of our installation.
         // In that plugin we use the fluid pagination widget. As the plugin has no arguments other
         // than the pagination, we can use the registerExtBasePagination() configurator to create a route
@@ -73,7 +73,7 @@ class Routing implements ConfigureRoutingInterface
             // You can either use numeric values, or pid references here.
             ['@pid.page.article.list']
         );
-
+        
         // The second route is used on our article detail page (/article/)
         // Its job is to map the last url segment against the article-tables "slug" field.
         // TYPO3 calls this process a "persisted alias mapping". If you work with non-extbase content elements
@@ -100,7 +100,7 @@ class Routing implements ConfigureRoutingInterface
                 ],
             ]
         );
-
+        
         // Finally we want to configure the routes for our author detail page.
         $configurator->registerExtbasePlugin(
             'authorDetail',
@@ -122,11 +122,11 @@ class Routing implements ConfigureRoutingInterface
                 'additional' => [
                     '{pageSegment}/{page}',
                 ],
-
-                'dbArgs'     => [
+                
+                'dbArgs' => [
                     'author' => [AuthorTable::class, 'slug'],
                 ],
-
+                
                 // Sometimes you want to translate a static segment of your route based on the current language.
                 // To do that you register it as "localeArgs" and tell the configurator to create a "LocaleModifier" for you.
                 'localeArgs' => [
@@ -136,7 +136,7 @@ class Routing implements ConfigureRoutingInterface
                 ],
             ]
         );
-
+        
     }
-
+    
 }

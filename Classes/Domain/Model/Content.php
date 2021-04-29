@@ -28,22 +28,22 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Content extends BetterEntity
 {
-
+    
     /**
      * @var string
      */
     protected $headline;
-
+    
     /**
      * @var string
      */
     protected $bodytext;
-
+    
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $media;
-
+    
     /**
      * @return string
      */
@@ -51,7 +51,7 @@ class Content extends BetterEntity
     {
         return $this->headline;
     }
-
+    
     /**
      * @return string
      */
@@ -59,7 +59,7 @@ class Content extends BetterEntity
     {
         return $this->bodytext;
     }
-
+    
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */

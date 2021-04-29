@@ -49,7 +49,7 @@ class DemoDataHooks implements PublicServiceInterface
      * @var \LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService
      */
     protected $flashMessages;
-
+    
     /**
      * DemoDataHooks constructor.
      *
@@ -59,21 +59,21 @@ class DemoDataHooks implements PublicServiceInterface
     {
         $this->flashMessages = $flashMessages;
     }
-
+    
     public function tableSaveHook(DataHookContext $c): void
     {
         $this->flashMessages->addOk(
             'Executed save hook on a per-table level: ' . $c->getTableName(),
             static::class . '::' . __FUNCTION__);
     }
-
+    
     public function typeSaveHook(DataHookContext $c)
     {
         $this->flashMessages->addOk(
             'Executed save hook on a per-type level: ' . $c->getTableName() . ' type: ' . $c->getRow()['type'],
             static::class . '::' . __FUNCTION__);
     }
-
+    
     public function fieldSaveHook(DataHookContext $c): void
     {
         $this->flashMessages->addOk(
@@ -81,7 +81,7 @@ class DemoDataHooks implements PublicServiceInterface
             $c->getTableName() . ' type: ' . $c->getRow()['type'],
             static::class . '::' . __FUNCTION__);
     }
-
+    
     public function tableOverrideSaveHook(DataHookContext $c): void
     {
         $this->flashMessages->addOk(
@@ -89,7 +89,7 @@ class DemoDataHooks implements PublicServiceInterface
             . ', that was registered in the override file!',
             static::class . '::' . __FUNCTION__);
     }
-
+    
     public function fieldOverrideSaveHook(DataHookContext $c): void
     {
         $this->flashMessages->addOk(
@@ -97,7 +97,7 @@ class DemoDataHooks implements PublicServiceInterface
             . $c->getKey() . ' ' . $c->getTableName() . ' type: ' . $c->getRow()['type'],
             static::class . '::' . __FUNCTION__);
     }
-
+    
     public function typeFieldSaveHook(DataHookContext $c)
     {
         $this->flashMessages->addOk(
@@ -105,7 +105,7 @@ class DemoDataHooks implements PublicServiceInterface
             $c->getTableName() . ' type: ' . $c->getRow()['type'],
             static::class . '::' . __FUNCTION__);
     }
-
+    
     public function flexFormFieldSaveHook(DataHookContext $c)
     {
         $this->flashMessages->addOk(
@@ -113,7 +113,7 @@ class DemoDataHooks implements PublicServiceInterface
             $c->getTableName(),
             static::class . '::' . __FUNCTION__);
     }
-
+    
     public function flexFormFieldInSectionFormHook(DataHookContext $c)
     {
         $this->flashMessages->addInfo(

@@ -17,185 +17,185 @@
   -->
 
 <T3DataStructure>
-    <meta>
-        <langDisable>1</langDisable>
-    </meta>
-    <sheets>
-        <General>
-            <ROOT>
-                <TCEforms>
-                    <sheetTitle>General</sheetTitle>
-                </TCEforms>
-                <type>array</type>
-                <el>
-                    <settings.mode>
-                        <TCEforms>
-                            <label>Mode Selection</label>
-                            <onChange>reload</onChange>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0">
-                                        <numIndex index="0">Please select</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1">
-                                        <numIndex index="0">Sortable</numIndex>
-                                        <numIndex index="1">sort</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2">
-                                        <numIndex index="0">Searchable</numIndex>
-                                        <numIndex index="1">search</numIndex>
-                                    </numIndex>
-                                </items>
-                                <size>1</size>
-                            </config>
-                        </TCEforms>
-                    </settings.mode>
-
-                    <settings.limit>
-                        <TCEforms>
-                            <label>Max sortable items</label>
-                            <displayCond>FIELD:settings.mode:=:sort</displayCond>
-                            <config>
-                                <type>input</type>
-                                <eval>int</eval>
-                                <size>5</size>
-                            </config>
-                        </TCEforms>
-                    </settings.limit>
-
-                    <settings.page.detail>
-                        <TCEforms>
-                            <label>Detail page</label>
-                            <config>
-                                <type>group</type>
-                                <internal_type>db</internal_type>
-                                <allowed>pages</allowed>
-                                <minitems>1</minitems>
-                                <maxitems>1</maxitems>
-                                <size>1</size>
-                                <wizards>
-                                    <suggest>
-                                        <type>suggest</type>
-                                    </suggest>
-                                </wizards>
-                            </config>
-                        </TCEforms>
-                    </settings.page.detail>
-                </el>
-            </ROOT>
-        </General>
-
-        <Sorting>
-            <ROOT>
-                <TCEforms>
-                    <sheetTitle>Sorting</sheetTitle>
-                    <displayCond>FIELD:General.settings.mode:=:sort</displayCond>
-                </TCEforms>
-                <type>array</type>
-                <el>
-                    <settings.sorting>
-                        <section>1</section>
-                        <type>array</type>
-                        <el>
-                            <field>
-                                <type>array</type>
-                                <tx_templavoila>
-                                    <title>Sorting</title>
-                                </tx_templavoila>
-                                <el>
-                                    <name>
-                                        <TCEforms>
-                                            <exclude>1</exclude>
-                                            <label>Fieldname</label>
-                                            <config>
-                                                <type>select</type>
-                                                <renderType>selectSingle</renderType>
-                                                <section>1</section>
-                                                <items type="array">
-                                                    <numIndex index="0">
-                                                        <numIndex index="0">Date</numIndex>
-                                                        <numIndex index="1">crdate</numIndex>
-                                                    </numIndex>
-                                                    <numIndex index="1">
-                                                        <numIndex index="0">Name</numIndex>
-                                                        <numIndex index="1">name</numIndex>
-                                                    </numIndex>
-                                                    <numIndex index="10">
-                                                        <numIndex index="0">Owner</numIndex>
-                                                        <numIndex index="1">owner</numIndex>
-                                                    </numIndex>
-                                                </items>
-                                                <size>1</size>
-                                            </config>
-                                        </TCEforms>
-                                    </name>
-                                    <type>
-                                        <TCEforms>
-                                            <exclude>1</exclude>
-                                            <label>Direction</label>
-                                            <config>
-                                                <type>select</type>
-                                                <renderType>selectSingle</renderType>
-                                                <section>1</section>
-                                                <items type="array">
-                                                    <numIndex index="0">
-                                                        <numIndex index="0">Ascending</numIndex>
-                                                        <numIndex index="1">ASC</numIndex>
-                                                    </numIndex>
-                                                    <numIndex index="1">
-                                                        <numIndex index="0">Descending</numIndex>
-                                                        <numIndex index="1">DESC</numIndex>
-                                                    </numIndex>
-                                                </items>
-                                                <size>1</size>
-                                            </config>
-                                        </TCEforms>
-                                    </type>
-                                </el>
-                            </field>
-                        </el>
-                    </settings.sorting>
-                </el>
-            </ROOT>
-        </Sorting>
-
-        <SearchForm>
-            <ROOT>
-                <TCEforms>
-                    <sheetTitle>Search</sheetTitle>
-                    <displayCond>FIELD:General.settings.mode:=:search</displayCond>
-                </TCEforms>
-                <type>array</type>
-                <el>
-                    <settings.searchForm.targetPage>
-                        <TCEforms>
-                            <label>Target Page</label>
-                            <config>
-                                <type>group</type>
-                                <internal_type>db</internal_type>
-                                <allowed>pages</allowed>
-                                <size>1</size>
-                                <maxitems>1</maxitems>
-                                <minitems>0</minitems>
-                                <show_thumbs>1</show_thumbs>
-                            </config>
-                        </TCEforms>
-                    </settings.searchForm.targetPage>
-
-                    <settings.searchForm.showSmallForm>
-                        <TCEforms>
-                            <label>Show small form</label>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
-                    </settings.searchForm.showSmallForm>
-                </el>
-            </ROOT>
-        </SearchForm>
-
-    </sheets>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<General>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>General</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.mode>
+						<TCEforms>
+							<label>Mode Selection</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0">
+										<numIndex index="0">Please select</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Sortable</numIndex>
+										<numIndex index="1">sort</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Searchable</numIndex>
+										<numIndex index="1">search</numIndex>
+									</numIndex>
+								</items>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.mode>
+					
+					<settings.limit>
+						<TCEforms>
+							<label>Max sortable items</label>
+							<displayCond>FIELD:settings.mode:=:sort</displayCond>
+							<config>
+								<type>input</type>
+								<eval>int</eval>
+								<size>5</size>
+							</config>
+						</TCEforms>
+					</settings.limit>
+					
+					<settings.page.detail>
+						<TCEforms>
+							<label>Detail page</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<minitems>1</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.page.detail>
+				</el>
+			</ROOT>
+		</General>
+		
+		<Sorting>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Sorting</sheetTitle>
+					<displayCond>FIELD:General.settings.mode:=:sort</displayCond>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.sorting>
+						<section>1</section>
+						<type>array</type>
+						<el>
+							<field>
+								<type>array</type>
+								<tx_templavoila>
+									<title>Sorting</title>
+								</tx_templavoila>
+								<el>
+									<name>
+										<TCEforms>
+											<exclude>1</exclude>
+											<label>Fieldname</label>
+											<config>
+												<type>select</type>
+												<renderType>selectSingle</renderType>
+												<section>1</section>
+												<items type="array">
+													<numIndex index="0">
+														<numIndex index="0">Date</numIndex>
+														<numIndex index="1">crdate</numIndex>
+													</numIndex>
+													<numIndex index="1">
+														<numIndex index="0">Name</numIndex>
+														<numIndex index="1">name</numIndex>
+													</numIndex>
+													<numIndex index="10">
+														<numIndex index="0">Owner</numIndex>
+														<numIndex index="1">owner</numIndex>
+													</numIndex>
+												</items>
+												<size>1</size>
+											</config>
+										</TCEforms>
+									</name>
+									<type>
+										<TCEforms>
+											<exclude>1</exclude>
+											<label>Direction</label>
+											<config>
+												<type>select</type>
+												<renderType>selectSingle</renderType>
+												<section>1</section>
+												<items type="array">
+													<numIndex index="0">
+														<numIndex index="0">Ascending</numIndex>
+														<numIndex index="1">ASC</numIndex>
+													</numIndex>
+													<numIndex index="1">
+														<numIndex index="0">Descending</numIndex>
+														<numIndex index="1">DESC</numIndex>
+													</numIndex>
+												</items>
+												<size>1</size>
+											</config>
+										</TCEforms>
+									</type>
+								</el>
+							</field>
+						</el>
+					</settings.sorting>
+				</el>
+			</ROOT>
+		</Sorting>
+		
+		<SearchForm>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Search</sheetTitle>
+					<displayCond>FIELD:General.settings.mode:=:search</displayCond>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.searchForm.targetPage>
+						<TCEforms>
+							<label>Target Page</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.searchForm.targetPage>
+					
+					<settings.searchForm.showSmallForm>
+						<TCEforms>
+							<label>Show small form</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.searchForm.showSmallForm>
+				</el>
+			</ROOT>
+		</SearchForm>
+	
+	</sheets>
 </T3DataStructure>

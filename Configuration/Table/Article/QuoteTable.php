@@ -29,26 +29,26 @@ use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
 
 class QuoteTable implements ConfigureTcaTableInterface
 {
-
+    
     public static function configureTable(TcaTable $table, ExtConfigContext $context): void
     {
         // We want to use this table as a "inline-only" table, therefore we mark it as "hidden"
         $table->setHidden();
-
+        
         // Otherwise there is not much special in this table...
         $table->setTitle('exampleBe.t.quote.title');
         $table->setLabelColumn('quote');
-
+        
         $type = $table->getType();
         $type->getTab(0)->addMultiple(static function () use ($type) {
             $type->getField('quote')
                  ->setLabel('exampleBe.t.quote.field.quote')
                  ->applyPreset()->textArea(['required', 'maxLength' => 500]);
-
+            
             $type->getField('author')
                  ->setLabel('exampleBe.t.quote.field.author')
                  ->applyPreset()->selectAuthor(['maxItems' => 1, 'required']);
         });
     }
-
+    
 }

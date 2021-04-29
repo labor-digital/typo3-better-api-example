@@ -37,15 +37,15 @@ class DemoTask extends AbstractTask implements ConfigureTaskInterface
     {
         $taskConfigurator->setDescription('A simple task that wishes you a pleasant day');
     }
-
+    
     /**
      * @inheritDoc
      */
     public function execute()
     {
         echo 'I hope you have a great day :D!' . PHP_EOL;
-
+        
         return true;
     }
-
+    
 }

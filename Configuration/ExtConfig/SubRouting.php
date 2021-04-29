@@ -37,10 +37,10 @@ class SubRouting implements ConfigureRoutingInterface, SiteKeyProviderInterface
     {
         return ['foo'];
     }
-
+    
     public static function configureRouting(RoutingConfigurator $configurator, SiteConfigContext $context): void
     {
         dbge('sub routing!');
     }
-
+    
 }

@@ -40,7 +40,7 @@ class DemoManuallyMapped extends BetterEntity
      * @var string
      */
     protected $mappedInput;
-
+    
     /**
      * @return string
      */

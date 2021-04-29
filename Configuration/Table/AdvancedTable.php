@@ -44,14 +44,14 @@ class AdvancedTable implements ConfigureTcaTableInterface
         $table->setTitle('exampleBe.t.advanced.title');
         $table->setLabelColumn('title');
         $type = $table->getType();
-
+        
         $type->getTab(0)->addMultiple(static function () use ($type) {
             $type->getField('title')
                  ->setReadOnly(true)
                 // You can create fully automated fields that get created when your record is created
                 // using callable default user functions
                  ->applyPreset()->input(['default' => [DemoUserFunc::class, 'generateDefaultTitle']]);
-
+            
             $type->getField('group_with_base_pid')
                 // Group relations can provide a base pid, this will automatically
                 // tell the TYPO3 backend that it should open a specific storage page
@@ -59,47 +59,47 @@ class AdvancedTable implements ConfigureTcaTableInterface
                  ->applyPreset()->relationGroup(ArticleTable::class, [
                     'basePid' => '@pid.storage.article',
                 ]);
-
+            
             $type->getField('group_with_multi_base_pid')
                 // This works with multiple tables as well
                  ->applyPreset()->relationGroup([ArticleTable::class, 'pages'], [
                     'basePid' => [
                         ArticleTable::class => '@pid.storage.article',
-                        'pages'             => 1,
+                        'pages' => 1,
                     ],
                 ]);
-
+            
             $type->getField('upload_with_basedir')
                 // You can provide a base directory for a file field
                 // If the directory not exists, it will be automatically created for you
                  ->applyPreset()->relationFile(['baseDir' => '/fileadmin/demo_upload']);
-
+            
             $type->getField('group_with_reload')
                 // In a vanilla TYPO3 group fields can not trigger a reload on change
                 // T3BA provides a compatibility patch to fix this issue.
                  ->setReloadOnChange(true)
                  ->applyPreset()->relationGroup(AuthorTable::class, ['maxItems' => 1]);
-
+            
             $type->getField('translated_default')
                 // TYPO3 can neither use translated values for defaults, nor for placeholders.
                 // T3BA provides patches for this issue as well.
                  ->applyPreset()->input([
-                    'default'     => 'exampleBe.g.dummy',
+                    'default' => 'exampleBe.g.dummy',
                     'placeholder' => 'exampleBe.g.dummy',
                 ]);
-
+            
             $type->getField('custom_field')
                 // Normally it is a real pain to register a new type of input element in the form engine.
                 // T3BA provides a preset called "customField" that allows you create a new field type with ease.
                 // take a look at this simple implementation of a toggle field
                  ->applyPreset()->customField(DemoField::class);
-
+            
             // Alternatively, if you are extra-fancy you could register a custom preset
             // for your field type and allow the table author to find your type that way.
             // See LaborDigital\Typo3BetterApiExample\FormEngine\FieldPreset\Demo to find out how to do that
             $type->getField('custom_field_with_preset')
                  ->applyPreset()->demoToggle();
-
+            
             $type->getField('custom_wizard')
                  ->applyPreset()->input()
                 // The creation of custom field wizards works in a similar way to fields
@@ -107,5 +107,5 @@ class AdvancedTable implements ConfigureTcaTableInterface
                  ->applyPreset()->customWizard(DemoWizard::class);
         });
     }
-
+    
 }

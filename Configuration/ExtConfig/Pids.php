@@ -35,26 +35,26 @@ class Pids implements ConfigurePidsInterface
     public static function configurePids(PidCollector $collector, ExtConfigContext $context): void
     {
         $collector->set('page.home', 1);
-
+        
         $collector->setMultiple([
             'storage' => [
                 'article' => 5,
                 // Currently we store authors in the same folder like articles,
                 // but changing that would be trivial in the future. Move the records an adjust the
                 // pid here once and you are done.
-                'author'  => 5,
+                'author' => 5,
             ],
-            'page'    => [
+            'page' => [
                 'article' => [
-                    'list'   => 1,
+                    'list' => 1,
                     'detail' => 6,
                 ],
-                'author'  => [
+                'author' => [
                     'detail' => 7,
                 ],
             ],
         ]);
-
+        
     }
-
+    
 }

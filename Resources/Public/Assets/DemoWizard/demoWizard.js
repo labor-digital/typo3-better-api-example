@@ -24,17 +24,17 @@
                 function () {
                     var wizard = wizards[i];
                     var targetName = wizard.dataset.target ?? null;
-
+                    
                     if (typeof targetName !== 'string') {
                         return;
                     }
-
+                    
                     // If there is a better way of setting a value than selecting and updating both fields
                     // at the same time, please let me know!
                     var target = document.querySelector('input[data-formengine-input-name="' + targetName + '"]');
                     var hidden = document.querySelector('input[name="' + targetName + '"]');
                     var button = wizard.querySelector('button');
-
+                    
                     button.addEventListener('click', function (e) {
                         e.preventDefault();
                         var rand = Math.random();

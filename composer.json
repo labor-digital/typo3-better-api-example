@@ -1,12 +1,12 @@
 {
-    "name": "labor-digital/typo3-better-api-example",
-    "description": "A simple example extension for the better api extension",
-    "type": "typo3-cms-extension",
-    "license": "Apache-2.0",
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "LaborDigital\\Typo3BetterApiExample\\": "Classes"
-        }
-    }
+	"name": "labor-digital/typo3-better-api-example",
+	"description": "A simple example extension for the better api extension",
+	"type": "typo3-cms-extension",
+	"license": "Apache-2.0",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"LaborDigital\\Typo3BetterApiExample\\": "Classes"
+		}
+	}
 }

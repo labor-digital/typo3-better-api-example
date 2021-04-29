@@ -36,17 +36,17 @@ use TYPO3\CMS\Core\DependencyInjection\NotFoundException;
 class ArticleController extends BetterContentActionController
     implements ConfigurePluginInterface, BackendPreviewRendererInterface
 {
-
+    
     /**
      * @var \LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository
      */
     protected $repository;
-
+    
     public function __construct(ArticleRepository $repository)
     {
         $this->repository = $repository;
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -56,33 +56,33 @@ class ArticleController extends BetterContentActionController
         // therefore we want to give it a speaking name and a description.
         $configurator->setTitle('exampleBe.p.article.title')
                      ->setDescription('exampleBe.p.article.desc');
-
+        
         // By default all actions will be used in order of their definition inside the controller.
         // However, because we want to create a plugin with multiple "variants"
         // (look further down for more information on that topic) we want to limit the usage to the
         // list action only.
         $configurator->setActions(['list']);
-
+        
         // Similar to a TCA table, you can access the flex form configuration
         // of your plugin using an object oriented way. In this case we start with an empty form and
         // create the fields we require.
         $flex = $configurator->getFlexForm();
-
+        
         // We want to let the editor decide how the articles should be ordered.
         // We do this by letting them chose a field and the sorting direction
         $flex->getField('settings.sorting')
              ->setLabel('exampleBe.p.article.field.sorting')
              ->applyPreset()->select([
-                'headline'  => 'exampleBe.t.article.field.headline',
+                'headline' => 'exampleBe.t.article.field.headline',
                 'published' => 'exampleBe.t.article.field.published',
             ]);
         $flex->getField('settings.direction')
              ->setLabel('exampleBe.p.article.field.direction')
              ->applyPreset()->select([
-                'asc'  => 'exampleBe.p.article.field.direction.asc',
+                'asc' => 'exampleBe.p.article.field.direction.asc',
                 'desc' => 'exampleBe.p.article.field.direction.desc',
             ]);
-
+        
         // Now, because switchable controller actions are deprecated since TYPO3 v10
         // we should migrate to using multiple plugins and register the same controller for them:
         // https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/10.4/Feature-91008-ItemGroupingForTCASelectItems.html#changelog-feature-91008-itemgroupingfortcaselectitems
@@ -92,28 +92,28 @@ class ArticleController extends BetterContentActionController
         // variant "detail" the internal logic will automatically check if there is a "detailAction" method and register
         // it as action for us.
         $variant = $configurator->getVariant('detail');
-
+        
         // Now, as well as our normal implementation the variant will show up in the "new content element wizard".
         // Therefore we define a title and description for it as well.
         $variant->setTitle('exampleBe.p.article.detail.title')
                 ->setDescription('exampleBe.p.article.detail.desc');
     }
-
+    
     public function listAction()
     {
         // We use our article repository to retrieve a list of all articles to show.
         $this->view->assign('articles', $this->repository->findForListPlugin($this->settings, $this->getData()));
     }
-
+    
     public function detailAction(?Article $article)
     {
         if ($article === null) {
             throw new NotFoundException('You have to require an article for this action');
         }
-
+        
         $this->view->assign('article', $article);
     }
-
+    
     /**
      * @inheritDoc
      */
@@ -122,13 +122,13 @@ class ArticleController extends BetterContentActionController
         // Whenever you use BetterContentActionController you automatically have access to the
         // ContentControllerBackendPreviewTrait trait, which will also work on its own for every extbase controller
         // out of the box and provide you with some additional features.
-
+        
         // Your first option is to load a fluid view directly in this method
         // and provide it with the required arguments. To do that simply use the following getFluidView().
         // Note: The method tries to find a BackendPreview.html template inside the template directory of your plugin.
         // Example:
         // return $this->getFluidView();
-
+        
         // Or in our case we want to do exactly the same logic than the frontend controller does.
         // If you have a simple plugin you can do this by simulating a frontend request in the backend.
         // The ExtBaseBackendPreviewRendererTrait gives you a helper for that, which is called simulateRequest().
@@ -137,7 +137,7 @@ class ArticleController extends BetterContentActionController
         // used for the frontend.
         // Example: render the list action using the BackendPreview.html
         // return $this->simulateRequest('list');
-
+        
         // However, in our case we work with multiple "variants" of the same plugin.
         // Therefore we want to be aware of the used variant and use the matching method accordingly.
         // ExtBaseBackendPreviewRendererTrait has a helper for that as well, it is called simulateVariantRequest().
@@ -151,13 +151,13 @@ class ArticleController extends BetterContentActionController
         // Example:
         return $this->simulateVariantRequest([
             'default' => 'list',
-
+            
             // The detail action, requires an $article to be set (done by our route enhancer),
             // otherwise it will throw a not found exception. For a backend preview, of a detail page
             // it does not make sense to map a static article, therefore we disable the request by
             // setting the detail variant to false.
-            'detail'  => false,
+            'detail' => false,
         ]);
     }
-
+    
 }

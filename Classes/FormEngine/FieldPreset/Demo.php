@@ -40,7 +40,7 @@ class Demo extends AbstractFieldPreset
     // You can use the custom field preset trait in your preset
     // in order to create presets for your custom form elements in a breeze
     use CustomFieldPresetTrait;
-
+    
     /**
      * Converts the field into a custom element using our demo field type
      */
@@ -48,5 +48,5 @@ class Demo extends AbstractFieldPreset
     {
         $this->applyCustomElementPreset(DemoField::class);
     }
-
+    
 }

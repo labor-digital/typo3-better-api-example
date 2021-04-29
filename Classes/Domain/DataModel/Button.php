@@ -28,17 +28,17 @@ use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 
 class Button extends AbstractDataModel
 {
-
+    
     /**
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
     protected $icon;
-
+    
     /**
      * @var string
      */
     protected $text;
-
+    
     /**
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
@@ -46,7 +46,7 @@ class Button extends AbstractDataModel
     {
         return $this->icon;
     }
-
+    
     /**
      * @return string
      */

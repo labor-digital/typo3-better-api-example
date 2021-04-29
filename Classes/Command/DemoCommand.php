@@ -47,15 +47,15 @@ class DemoCommand extends Command implements ConfigureCliCommandInterface
     {
         $this->setDescription('A simple command that could do whatever you want, imagine the possibilities!');
     }
-
+    
     /**
      * @inheritDoc
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('Hello world, this is a demo command :D');
-
+        
         return 0;
     }
-
+    
 }

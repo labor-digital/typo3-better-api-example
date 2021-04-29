@@ -17,180 +17,180 @@
   -->
 
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
-        <header/>
-        <body>
-            <trans-unit id="g.dummy">
-                <source>Dummy!</source>
-            </trans-unit>
-            <trans-unit id="field.demoField.button.on">
-                <source>On</source>
-            </trans-unit>
-            <trans-unit id="field.demoField.button.off">
-                <source>Off</source>
-            </trans-unit>
-            <trans-unit id="wizard.button.generate">
-                <source>Set random value</source>
-            </trans-unit>
-            <trans-unit id="ce.button.title">
-                <source>Button</source>
-            </trans-unit>
-            <trans-unit id="ce.button.desc">
-                <source>A simple button to create a link</source>
-            </trans-unit>
-            <trans-unit id="ce.button.field.label">
-                <source>Label</source>
-            </trans-unit>
-            <trans-unit id="ce.button.field.icon">
-                <source>Icon</source>
-            </trans-unit>
-            <trans-unit id="ce.button.field.type">
-                <source>Button-Type</source>
-            </trans-unit>
-            <trans-unit id="ce.button.field.type.default">
-                <source>Default</source>
-            </trans-unit>
-            <trans-unit id="ce.button.field.type.cta">
-                <source>CTA</source>
-            </trans-unit>
-            <trans-unit id="ce.button.field.link">
-                <source>Link-Target</source>
-            </trans-unit>
-            <trans-unit id="p.author.title">
-                <source>Author detail</source>
-            </trans-unit>
-            <trans-unit id="p.author.desc">
-                <source>Displays the information about a single author and a list of all articles</source>
-            </trans-unit>
-            <trans-unit id="p.article.title">
-                <source>Article List</source>
-            </trans-unit>
-            <trans-unit id="p.article.desc">
-                <source>Displays article records in list</source>
-            </trans-unit>
-            <trans-unit id="p.article.field.sorting">
-                <source>Sort field</source>
-            </trans-unit>
-            <trans-unit id="p.article.field.direction">
-                <source>Sort direction</source>
-            </trans-unit>
-            <trans-unit id="p.article.field.direction.asc">
-                <source>Ascending</source>
-            </trans-unit>
-            <trans-unit id="p.article.field.direction.desc">
-                <source>Descending</source>
-            </trans-unit>
-            <trans-unit id="p.article.detail.title">
-                <source>Article Detail</source>
-            </trans-unit>
-            <trans-unit id="p.article.detail.desc">
-                <source>Displays a single article</source>
-            </trans-unit>
-            <trans-unit id="p.pluginA.title">
-                <source>Plugin A</source>
-            </trans-unit>
-            <trans-unit id="p.pluginA.desc">
-                <source>A simple plugin that shows how you can configure an extbase plugin using ext config</source>
-            </trans-unit>
-            <trans-unit id="p.pluginB.title">
-                <source>Plugin B</source>
-            </trans-unit>
-            <trans-unit id="p.pluginB.desc">
-                <source>A simple plugin that shows how you can use fluid templates as a backend preview</source>
-            </trans-unit>
-            <trans-unit id="t.demo.title">
-                <source>Demo-Record</source>
-            </trans-unit>
-            <trans-unit id="t.demo.palette.title">
-                <source>Title</source>
-            </trans-unit>
-            <trans-unit id="t.demo.field.overrideField">
-                <source>Override Field</source>
-            </trans-unit>
-            <trans-unit id="t.demo.field.overrideField.desc">
-                <source>This field was added in the table override file.</source>
-            </trans-unit>
-            <trans-unit id="t.advanced.title">
-                <source>Demo-Record (Advanced Options)</source>
-            </trans-unit>
-            <trans-unit id="t.quote.title">
-                <source>Quote</source>
-            </trans-unit>
-            <trans-unit id="t.quote.field.quote">
-                <source>Quote</source>
-            </trans-unit>
-            <trans-unit id="t.quote.field.author">
-                <source>Author</source>
-            </trans-unit>
-            <trans-unit id="t.article.title">
-                <source>Article</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.author">
-                <source>Authors</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.headline">
-                <source>Headline</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.subHeadline">
-                <source>Sub Headline</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.teaserText">
-                <source>Teaser Text</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.teaserText.desc">
-                <source>This field is only shown in the article list</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.slug">
-                <source>Slug</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.published">
-                <source>Published date</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.bannerImage">
-                <source>Banner image</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.bannerImage.crop">
-                <source>Crop</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.bannerImage.crop.wide">
-                <source>Wide</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.bannerImage.crop.quadratic">
-                <source>Quadratic</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.content">
-                <source>Content elements</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.categories">
-                <source>Categories</source>
-            </trans-unit>
-            <trans-unit id="t.article.field.quotes">
-                <source>Quotes</source>
-            </trans-unit>
-            <trans-unit id="t.article.tab.content">
-                <source>Content</source>
-            </trans-unit>
-            <trans-unit id="t.article.tab.relations">
-                <source>Relations</source>
-            </trans-unit>
-            <trans-unit id="t.author.title">
-                <source>Author</source>
-            </trans-unit>
-            <trans-unit id="t.author.palette.name">
-                <source>Name</source>
-            </trans-unit>
-            <trans-unit id="t.author.field.slug">
-                <source>Slug</source>
-            </trans-unit>
-            <trans-unit id="t.author.field.firstName">
-                <source>First Name</source>
-            </trans-unit>
-            <trans-unit id="t.author.field.lastName">
-                <source>Last Name</source>
-            </trans-unit>
-            <trans-unit id="t.author.field.birthday">
-                <source>Birthday</source>
-            </trans-unit>
-        </body>
-    </file>
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
+		<header/>
+		<body>
+			<trans-unit id="g.dummy">
+				<source>Dummy!</source>
+			</trans-unit>
+			<trans-unit id="field.demoField.button.on">
+				<source>On</source>
+			</trans-unit>
+			<trans-unit id="field.demoField.button.off">
+				<source>Off</source>
+			</trans-unit>
+			<trans-unit id="wizard.button.generate">
+				<source>Set random value</source>
+			</trans-unit>
+			<trans-unit id="ce.button.title">
+				<source>Button</source>
+			</trans-unit>
+			<trans-unit id="ce.button.desc">
+				<source>A simple button to create a link</source>
+			</trans-unit>
+			<trans-unit id="ce.button.field.label">
+				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="ce.button.field.icon">
+				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="ce.button.field.type">
+				<source>Button-Type</source>
+			</trans-unit>
+			<trans-unit id="ce.button.field.type.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="ce.button.field.type.cta">
+				<source>CTA</source>
+			</trans-unit>
+			<trans-unit id="ce.button.field.link">
+				<source>Link-Target</source>
+			</trans-unit>
+			<trans-unit id="p.author.title">
+				<source>Author detail</source>
+			</trans-unit>
+			<trans-unit id="p.author.desc">
+				<source>Displays the information about a single author and a list of all articles</source>
+			</trans-unit>
+			<trans-unit id="p.article.title">
+				<source>Article List</source>
+			</trans-unit>
+			<trans-unit id="p.article.desc">
+				<source>Displays article records in list</source>
+			</trans-unit>
+			<trans-unit id="p.article.field.sorting">
+				<source>Sort field</source>
+			</trans-unit>
+			<trans-unit id="p.article.field.direction">
+				<source>Sort direction</source>
+			</trans-unit>
+			<trans-unit id="p.article.field.direction.asc">
+				<source>Ascending</source>
+			</trans-unit>
+			<trans-unit id="p.article.field.direction.desc">
+				<source>Descending</source>
+			</trans-unit>
+			<trans-unit id="p.article.detail.title">
+				<source>Article Detail</source>
+			</trans-unit>
+			<trans-unit id="p.article.detail.desc">
+				<source>Displays a single article</source>
+			</trans-unit>
+			<trans-unit id="p.pluginA.title">
+				<source>Plugin A</source>
+			</trans-unit>
+			<trans-unit id="p.pluginA.desc">
+				<source>A simple plugin that shows how you can configure an extbase plugin using ext config</source>
+			</trans-unit>
+			<trans-unit id="p.pluginB.title">
+				<source>Plugin B</source>
+			</trans-unit>
+			<trans-unit id="p.pluginB.desc">
+				<source>A simple plugin that shows how you can use fluid templates as a backend preview</source>
+			</trans-unit>
+			<trans-unit id="t.demo.title">
+				<source>Demo-Record</source>
+			</trans-unit>
+			<trans-unit id="t.demo.palette.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="t.demo.field.overrideField">
+				<source>Override Field</source>
+			</trans-unit>
+			<trans-unit id="t.demo.field.overrideField.desc">
+				<source>This field was added in the table override file.</source>
+			</trans-unit>
+			<trans-unit id="t.advanced.title">
+				<source>Demo-Record (Advanced Options)</source>
+			</trans-unit>
+			<trans-unit id="t.quote.title">
+				<source>Quote</source>
+			</trans-unit>
+			<trans-unit id="t.quote.field.quote">
+				<source>Quote</source>
+			</trans-unit>
+			<trans-unit id="t.quote.field.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="t.article.title">
+				<source>Article</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.author">
+				<source>Authors</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.headline">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.subHeadline">
+				<source>Sub Headline</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.teaserText">
+				<source>Teaser Text</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.teaserText.desc">
+				<source>This field is only shown in the article list</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.slug">
+				<source>Slug</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.published">
+				<source>Published date</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.bannerImage">
+				<source>Banner image</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.bannerImage.crop">
+				<source>Crop</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.bannerImage.crop.wide">
+				<source>Wide</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.bannerImage.crop.quadratic">
+				<source>Quadratic</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.content">
+				<source>Content elements</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="t.article.field.quotes">
+				<source>Quotes</source>
+			</trans-unit>
+			<trans-unit id="t.article.tab.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="t.article.tab.relations">
+				<source>Relations</source>
+			</trans-unit>
+			<trans-unit id="t.author.title">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="t.author.palette.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="t.author.field.slug">
+				<source>Slug</source>
+			</trans-unit>
+			<trans-unit id="t.author.field.firstName">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="t.author.field.lastName">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="t.author.field.birthday">
+				<source>Birthday</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>
