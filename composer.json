@@ -8,5 +8,10 @@
 		"psr-4": {
 			"LaborDigital\\Typo3BetterApiExample\\": "Classes"
 		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "T3BA_example"
+		}
 	}
 }
