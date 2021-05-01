@@ -30,6 +30,7 @@ use LaborDigital\T3BA\ExtConfigHandler\Fluid\ConfigureFluidInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Fluid\FluidConfigurator;
 use LaborDigital\T3BA\ExtConfigHandler\Translation\ConfigureTranslationInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Translation\TranslationConfigurator;
+use TYPO3\CMS\Core\Log\LogLevel;
 
 class Common implements ConfigureTranslationInterface,
                         ConfigureTypoCoreInterface,
@@ -50,6 +51,14 @@ class Common implements ConfigureTranslationInterface,
     {
         // Register a new log file writer for all logs written by this extension
         $configurator->registerFileLog(['key' => 'demoLog']);
+        
+        // Whenever one of the classes in your extension logs a "warning" it will automatically end up in the backend log overview.
+        $configurator->registerBeLogLogger(['logLevel' => LogLevel::WARNING]);
+        
+        // Registers a global log writer that will push all logs into the stdOut of the application.
+        // This makes this log writer extremely useful for docker environments.
+        // "global" writers catch all log entries that have not been processed by specifically configured log writers
+        $configurator->registerStreamLogger(['global']);
     }
     
     /**
