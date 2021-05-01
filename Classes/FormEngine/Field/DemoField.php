@@ -98,6 +98,7 @@ HTML;
     
     public function saveHook(CustomFieldDataHookContext $context): void
     {
+        dbge($context->getOptions());
         // As you can see, when you register a data hook on a custom field, you will receive the
         // CustomFieldDataHookContext object instead of the default DataHookContext.
         // This special context implementation provides you easy access to the field information or
