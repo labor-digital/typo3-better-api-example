@@ -18,7 +18,7 @@
  */
 /** @var $_EXTKEY string */
 $EM_CONF[$_EXTKEY] = [
-    "title" => "Better API - Example",
+    "title" => "T3BA - Example",
     "description" => "A simple example extension for the better api extension",
     "author" => "Martin Neundorfer",
     "author_email" => "m.neundorfer@labor.digital",
@@ -28,7 +28,7 @@ $EM_CONF[$_EXTKEY] = [
     "conflicts" => "",
     "priority" => "",
     "module" => "",
-    "state" => "alpha",
+    "state" => "beta",
     "internal" => "",
     "uploadfolder" => 0,
     "createDirs" => "",
