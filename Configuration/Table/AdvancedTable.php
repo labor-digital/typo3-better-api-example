@@ -20,17 +20,17 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\Table;
+namespace LaborDigital\T3baExample\Configuration\Table;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\ArticleTable;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\AuthorTable;
-use LaborDigital\Typo3BetterApiExample\FormEngine\Field\DemoField;
-use LaborDigital\Typo3BetterApiExample\FormEngine\UserFunc\DemoUserFunc;
-use LaborDigital\Typo3BetterApiExample\FormEngine\Wizard\DemoWizard;
+use LaborDigital\T3baExample\Configuration\Table\Article\ArticleTable;
+use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable;
+use LaborDigital\T3baExample\FormEngine\Field\DemoField;
+use LaborDigital\T3baExample\FormEngine\UserFunc\DemoUserFunc;
+use LaborDigital\T3baExample\FormEngine\Wizard\DemoWizard;
 
 class AdvancedTable implements ConfigureTcaTableInterface
 {
@@ -92,11 +92,11 @@ class AdvancedTable implements ConfigureTcaTableInterface
                 // Normally it is a real pain to register a new type of input element in the form engine.
                 // T3BA provides a preset called "customField" that allows you create a new field type with ease.
                 // take a look at this simple implementation of a toggle field
-                 ->applyPreset()->customField(DemoField::class);
+                 ->applyPreset()->customField(DemoField::class, ['someOptions' => true]);
             
             // Alternatively, if you are extra-fancy you could register a custom preset
             // for your field type and allow the table author to find your type that way.
-            // See LaborDigital\Typo3BetterApiExample\FormEngine\FieldPreset\Demo to find out how to do that
+            // See LaborDigital\T3baExample\FormEngine\FieldPreset\Demo to find out how to do that
             $type->getField('custom_field_with_preset')
                  ->applyPreset()->demoToggle();
             

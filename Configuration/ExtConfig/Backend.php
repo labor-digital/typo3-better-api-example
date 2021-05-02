@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
+namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
@@ -42,10 +42,10 @@ class Backend implements ConfigureBackendInterface
         // Pro-tip: All config options allow you to work with placeholders for your {{extKey}}, {{vendor}} and
         // {{extKeyWithVendor}}. This way, you can keep your options relative to the extension without hard-coding the
         // values, or relying on $context->getExtKey() and friends
-        $configurator->registerCss('EXT:{{extKey}}/Resources/Public/Assets/backend.css');
+        $configurator->registerStyleSheet('example-backend-main', 'EXT:{{extKey}}/Resources/Public/Assets/backend.css');
         
         // This works for javascript as well
-        $configurator->registerJs('EXT:{{extKey}}/Resources/Public/Assets/backend.js');
+        $configurator->registerJavaScript('example-backend-main', 'EXT:{{extKey}}/Resources/Public/Assets/backend.js');
         
         // You can also configure the RTE directly in your PHP code, without messing with yml files.
         // By default you start configuring the "default" preset, but can always switch to a different one

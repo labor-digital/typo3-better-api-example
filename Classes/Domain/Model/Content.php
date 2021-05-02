@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Domain\Model;
+namespace LaborDigital\T3baExample\Domain\Model;
 
 
 use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;

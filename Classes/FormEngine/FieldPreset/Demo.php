@@ -20,12 +20,12 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\FormEngine\FieldPreset;
+namespace LaborDigital\T3baExample\FormEngine\FieldPreset;
 
 
 use LaborDigital\T3BA\Tool\FormEngine\Custom\Field\CustomFieldPresetTrait;
 use LaborDigital\T3BA\Tool\Tca\Builder\FieldPreset\AbstractFieldPreset;
-use LaborDigital\Typo3BetterApiExample\FormEngine\Field\DemoField;
+use LaborDigital\T3baExample\FormEngine\Field\DemoField;
 
 /**
  * Class Demo
@@ -33,7 +33,7 @@ use LaborDigital\Typo3BetterApiExample\FormEngine\Field\DemoField;
  * Field presets must be located at /Classes/FormEngine/FieldPreset AND extend the AbstractFieldPreset
  * class in order to be found by the preset collector.
  *
- * @package LaborDigital\Typo3BetterApiExample\FormEngine\FieldPreset
+ * @package LaborDigital\T3baExample\FormEngine\FieldPreset
  */
 class Demo extends AbstractFieldPreset
 {

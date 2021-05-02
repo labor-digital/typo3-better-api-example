@@ -20,12 +20,12 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Domain\Repository\Article;
+namespace LaborDigital\T3baExample\Domain\Repository\Article;
 
 
 use LaborDigital\T3BA\ExtBase\Domain\Repository\BetterRepository;
 use LaborDigital\T3BA\Tool\Database\BetterQuery\AbstractBetterQuery;
-use LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author;
+use LaborDigital\T3baExample\Domain\Model\Article\Author;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
 class ArticleRepository extends BetterRepository
@@ -50,7 +50,7 @@ class ArticleRepository extends BetterRepository
     /**
      * Returns a list of all articles by this author
      *
-     * @param   \LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author  $author
+     * @param   \LaborDigital\T3baExample\Domain\Model\Article\Author  $author
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */

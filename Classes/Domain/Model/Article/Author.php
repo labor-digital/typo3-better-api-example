@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Domain\Model\Article;
+namespace LaborDigital\T3baExample\Domain\Model\Article;
 
 
 use DateTime;

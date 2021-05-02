@@ -6,12 +6,12 @@
 	"require": {},
 	"autoload": {
 		"psr-4": {
-			"LaborDigital\\Typo3BetterApiExample\\": "Classes"
+			"LaborDigital\\T3baExample\\": "Classes"
 		}
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "T3BA_example"
+			"extension-key": "t3ba_example"
 		}
 	}
 }

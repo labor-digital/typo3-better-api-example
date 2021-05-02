@@ -20,13 +20,13 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\Table\Override;
+namespace LaborDigital\T3baExample\Configuration\Table\Override;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
-use LaborDigital\Typo3BetterApiExample\EventHandler\DataHook\DemoDataHooks;
+use LaborDigital\T3baExample\EventHandler\DataHook\DemoDataHooks;
 
 class DemoTable implements ConfigureTcaTableInterface
 {

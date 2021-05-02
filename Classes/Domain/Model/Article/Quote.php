@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Domain\Model\Article;
+namespace LaborDigital\T3baExample\Domain\Model\Article;
 
 
 use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
@@ -34,7 +34,7 @@ class Quote extends BetterEntity
     protected $quote;
     
     /**
-     * @var \LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author
+     * @var \LaborDigital\T3baExample\Domain\Model\Article\Author
      */
     protected $author;
 }

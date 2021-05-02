@@ -20,16 +20,16 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
+namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
 use LaborDigital\T3BA\ExtConfig\SiteBased\SiteConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Routing\ConfigureRoutingInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Routing\RoutingConfigurator;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\ArticleTable;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\AuthorTable;
-use LaborDigital\Typo3BetterApiExample\Controller\ArticleController;
-use LaborDigital\Typo3BetterApiExample\Controller\AuthorController;
+use LaborDigital\T3baExample\Configuration\Table\Article\ArticleTable;
+use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable;
+use LaborDigital\T3baExample\Controller\ArticleController;
+use LaborDigital\T3baExample\Controller\AuthorController;
 
 class Routing implements ConfigureRoutingInterface
 {

@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\FormEngine\Field;
+namespace LaborDigital\T3baExample\FormEngine\Field;
 
 
 use Doctrine\DBAL\Types\IntegerType;
@@ -37,7 +37,7 @@ use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaField;
  * Make sure, that you either extend the AbstractCustomField or at least implement the CustomFieldInterface
  * in order for the system to work with your field.
  *
- * @package LaborDigital\Typo3BetterApiExample\FormEngine\Field
+ * @package LaborDigital\T3baExample\FormEngine\Field
  */
 class DemoField extends AbstractCustomField
 {

@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Domain\Model\Article;
+namespace LaborDigital\T3baExample\Domain\Model\Article;
 
 
 use DateTime;
@@ -47,12 +47,12 @@ class Article extends BetterEntity
     protected $teaserText;
     
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\T3baExample\Domain\Model\Article\Author>
      */
     protected $author;
     
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\Typo3BetterApiExample\Domain\Model\Content>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\T3baExample\Domain\Model\Content>
      */
     protected $content;
     

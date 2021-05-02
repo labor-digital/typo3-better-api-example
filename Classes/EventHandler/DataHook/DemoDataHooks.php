@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\EventHandler\DataHook;
+namespace LaborDigital\T3baExample\EventHandler\DataHook;
 
 
 use LaborDigital\T3BA\Core\Di\PublicServiceInterface;
@@ -39,9 +39,9 @@ use LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService;
  *
  * This class will show flash messages every time an action was executed.
  * No actual data is changed here. If you want a closer look on how dataHooks work take a look at the
- * plugin examples: {@link \LaborDigital\Typo3BetterApiExample\Controller\PluginAController::saveHook()}
+ * plugin examples: {@link \LaborDigital\T3baExample\Controller\PluginAController::saveHook()}
  *
- * @package LaborDigital\Typo3BetterApiExample\EventHandler\DataHook
+ * @package LaborDigital\T3baExample\EventHandler\DataHook
  */
 class DemoDataHooks implements PublicServiceInterface
 {

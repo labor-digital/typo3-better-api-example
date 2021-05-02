@@ -20,15 +20,15 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
+namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Link\ConfigureLinksInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Link\DefinitionCollector;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\ArticleTable;
-use LaborDigital\Typo3BetterApiExample\Controller\ArticleController;
-use LaborDigital\Typo3BetterApiExample\Controller\AuthorController;
+use LaborDigital\T3baExample\Configuration\Table\Article\ArticleTable;
+use LaborDigital\T3baExample\Controller\ArticleController;
+use LaborDigital\T3baExample\Controller\AuthorController;
 
 class Links implements ConfigureLinksInterface
 {

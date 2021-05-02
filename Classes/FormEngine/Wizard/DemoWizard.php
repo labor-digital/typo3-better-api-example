@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\FormEngine\Wizard;
+namespace LaborDigital\T3baExample\FormEngine\Wizard;
 
 
 use LaborDigital\T3BA\Tool\FormEngine\Custom\Wizard\AbstractCustomWizard;
@@ -29,9 +29,9 @@ use LaborDigital\T3BA\Tool\FormEngine\Custom\Wizard\AbstractCustomWizard;
  * Class DemoWizard
  *
  * The definition of wizards works quite similar to custom field types.
- * So I would suggest taking a look at {@link \LaborDigital\Typo3BetterApiExample\FormEngine\Field\DemoField}
+ * So I would suggest taking a look at {@link \LaborDigital\T3baExample\FormEngine\Field\DemoField}
  *
- * @package LaborDigital\Typo3BetterApiExample\FormEngine\Wizard
+ * @package LaborDigital\T3baExample\FormEngine\Wizard
  */
 class DemoWizard extends AbstractCustomWizard
 {

@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.01.13 at 18:21
+ * Last modified: 2021.05.01 at 15:24
  */
 
 declare(strict_types=1);
 
 
-namespace LaborDigital\T3baExample\ViewHelpers;
+namespace LaborDigital\T3baExample\EventHandler\DataHook;
 
 
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use LaborDigital\T3BA\Tool\FormEngine\Custom\Field\CustomFieldDataHookContext;
 
-class DemoViewHelper extends AbstractViewHelper
+class ButtonDataHook
 {
-    public function render(): string
+    public function formHook(CustomFieldDataHookContext $context)
     {
-        return 'This was rendered by a demo view helper :)';
+        dbge($context);
     }
 }

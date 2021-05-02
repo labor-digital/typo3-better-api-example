@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Controller;
+namespace LaborDigital\T3baExample\Controller;
 
 use LaborDigital\T3BA\ExtBase\Controller\BetterContentActionController;
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
@@ -29,11 +29,18 @@ use LaborDigital\T3BA\ExtConfigHandler\ExtBase\ContentElement\ContentElementConf
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext;
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
 use LaborDigital\T3BA\Tool\Tca\ContentType\Builder\ContentType;
+use LaborDigital\T3baExample\EventHandler\DataHook\ButtonDataHook;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 
 class ButtonController extends BetterContentActionController
     implements ConfigureContentElementInterface,
-               BackendPreviewRendererInterface
+               BackendPreviewRendererInterface,
+               LoggerAwareInterface
 {
+    
+    use LoggerAwareTrait;
+    
     /**
      * @inheritDoc
      */
@@ -70,6 +77,10 @@ class ButtonController extends BetterContentActionController
                  ->applyPreset()
                  ->link(['required', 'allowLinkSets']);
             
+            $type->getField('custom')
+                 ->registerFormHook(ButtonDataHook::class)
+                 ->applyPreset()->demoToggle();
+            
             $type->getField('icon')
                  ->setLabel('exampleBe.ce.button.field.icon')
                  ->applyPreset()
@@ -79,6 +90,12 @@ class ButtonController extends BetterContentActionController
     
     public function indexAction(): string
     {
+//        $link = $this->cs()->links->getLink();
+//        $link = $link->withPid(3)
+//                     ->withCHashExcludedArgs(['foo'])
+//                     ->withAddedToArgs('foo', 'bar');
+//        dbge($link->build());
+//
         return 'Button :D';
     }
     
@@ -91,6 +108,7 @@ class ButtonController extends BetterContentActionController
             'label',
             'link',
             'icon',
+            'sys_language_uid',
         ]);
     }
     

@@ -20,13 +20,13 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
+namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Http\ConfigureHttpInterface;
 use LaborDigital\T3BA\ExtConfigHandler\Http\HttpConfigurator;
-use LaborDigital\Typo3BetterApiExample\Middleware\DemoMiddleware;
+use LaborDigital\T3baExample\Middleware\DemoMiddleware;
 
 class Http implements ConfigureHttpInterface
 {

@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Controller;
+namespace LaborDigital\T3baExample\Controller;
 
 
 use LaborDigital\T3BA\ExtBase\Controller\BetterContentActionController;
@@ -29,8 +29,10 @@ use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
 use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext;
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
-use LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Article;
-use LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository;
+use LaborDigital\T3BA\Tool\DataHook\DataHookTypes;
+use LaborDigital\T3baExample\Domain\Model\Article\Article;
+use LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository;
+use LaborDigital\T3baExample\EventHandler\DataHook\ButtonDataHook;
 use TYPO3\CMS\Core\DependencyInjection\NotFoundException;
 
 class ArticleController extends BetterContentActionController
@@ -38,7 +40,7 @@ class ArticleController extends BetterContentActionController
 {
     
     /**
-     * @var \LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository
+     * @var \LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository
      */
     protected $repository;
     
@@ -77,6 +79,7 @@ class ArticleController extends BetterContentActionController
                 'published' => 'exampleBe.t.article.field.published',
             ]);
         $flex->getField('settings.direction')
+             ->registerDataHook(DataHookTypes::TYPE_FORM, ButtonDataHook::class)
              ->setLabel('exampleBe.p.article.field.direction')
              ->applyPreset()->select([
                 'asc' => 'exampleBe.p.article.field.direction.asc',

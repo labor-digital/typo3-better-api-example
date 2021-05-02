@@ -19,14 +19,14 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Command;
+namespace LaborDigital\T3baExample\Command;
 
 
 use LaborDigital\T3BA\Core\Di\ContainerAwareTrait;
 use LaborDigital\T3BA\ExtConfigHandler\Command\ConfigureCliCommandInterface;
 use LaborDigital\T3BA\Tool\OddsAndEnds\NamingUtil;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\ArticleTable;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\AuthorTable;
+use LaborDigital\T3baExample\Configuration\Table\Article\ArticleTable;
+use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable;
 use Neunerlei\Arrays\Arrays;
 use Neunerlei\TinyTimy\DateTimy;
 use Symfony\Component\Console\Command\Command;
@@ -44,7 +44,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * This command shows you how to create a cli command that populates the database tables using the
  * TYPO3 data handler using T3BA.
  *
- * @package LaborDigital\Typo3BetterApiExample\Command
+ * @package LaborDigital\T3baExample\Command
  */
 class PopulatorCommand extends Command implements ConfigureCliCommandInterface
 {

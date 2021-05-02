@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Controller;
+namespace LaborDigital\T3baExample\Controller;
 
 
 use LaborDigital\T3BA\ExtBase\Controller\BetterContentActionController;
@@ -29,22 +29,22 @@ use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
 use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext;
 use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
-use LaborDigital\Typo3BetterApiExample\Domain\Model\Article\Author;
-use LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository;
+use LaborDigital\T3baExample\Domain\Model\Article\Author;
+use LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository;
 use TYPO3\CMS\Core\DependencyInjection\NotFoundException;
 
 class AuthorController extends BetterContentActionController
     implements ConfigurePluginInterface, BackendPreviewRendererInterface
 {
     /**
-     * @var \LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository
+     * @var \LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository
      */
     protected $articleRepository;
     
     /**
      * AuthorController constructor.
      *
-     * @param   \LaborDigital\Typo3BetterApiExample\Domain\Repository\Article\ArticleRepository  $articleRepository
+     * @param   \LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository  $articleRepository
      */
     public function __construct(ArticleRepository $articleRepository)
     {

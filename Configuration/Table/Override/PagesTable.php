@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\Table\Override;
+namespace LaborDigital\T3baExample\Configuration\Table\Override;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;

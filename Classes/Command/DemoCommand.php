@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Command;
+namespace LaborDigital\T3baExample\Command;
 
 
 use LaborDigital\T3BA\ExtConfigHandler\Command\ConfigureCliCommandInterface;
@@ -36,7 +36,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * also implement the ConfigureCliCommandInterface. The command configuration is done using
  * the "configure()" method provided by the command. All information are provided to the TYPO3 implementation.
  *
- * @package LaborDigital\Typo3BetterApiExample\Command
+ * @package LaborDigital\T3baExample\Command
  */
 class DemoCommand extends Command implements ConfigureCliCommandInterface
 {

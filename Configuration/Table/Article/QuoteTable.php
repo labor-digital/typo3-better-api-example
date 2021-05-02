@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\Table\Article;
+namespace LaborDigital\T3baExample\Configuration\Table\Article;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;

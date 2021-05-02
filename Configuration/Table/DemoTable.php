@@ -20,14 +20,14 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\Table;
+namespace LaborDigital\T3baExample\Configuration\Table;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
 use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
-use LaborDigital\Typo3BetterApiExample\Domain\Model\DemoManuallyMapped;
-use LaborDigital\Typo3BetterApiExample\EventHandler\DataHook\DemoDataHooks;
+use LaborDigital\T3baExample\Domain\Model\DemoManuallyMapped;
+use LaborDigital\T3baExample\EventHandler\DataHook\DemoDataHooks;
 
 class DemoTable implements ConfigureTcaTableInterface
 {
@@ -50,7 +50,7 @@ class DemoTable implements ConfigureTcaTableInterface
         // name of the database table you are currently configuring.
         //
         // You can also provide namespaces in your table class definition,
-        // take a look at LaborDigital\Typo3BetterApiExample\ConfigurationTable\Article\Article
+        // take a look at LaborDigital\T3baExample\ConfigurationTable\Article\Article
         // or "Author" in the same namespace. Those tables will incorporate the "article" namespace
         // in their table name automatically: tx_typo3betterapiexample_domain_model_article_article.
         

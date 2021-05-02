@@ -20,11 +20,11 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\FormEngine\FieldPreset;
+namespace LaborDigital\T3baExample\FormEngine\FieldPreset;
 
 
 use LaborDigital\T3BA\Tool\Tca\Builder\FieldPreset\AbstractFieldPreset;
-use LaborDigital\Typo3BetterApiExample\Configuration\Table\Article\AuthorTable as AuthorTable;
+use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable as AuthorTable;
 
 class Author extends AbstractFieldPreset
 {

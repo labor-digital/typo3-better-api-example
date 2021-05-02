@@ -1,0 +1,2 @@
+// Add additional template path for fluid styled content
+lib.contentElement.partialRootPaths.800 = EXT:T3BA_example/Resources/Private/Partials/FluidStyledContent/

@@ -20,11 +20,11 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig;
+namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
 use LaborDigital\T3BA\ExtConfigHandler\Di\DefaultDiConfig;
-use LaborDigital\Typo3BetterApiExample\Middleware\DemoMiddleware;
+use LaborDigital\T3baExample\Middleware\DemoMiddleware;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
@@ -34,7 +34,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
  * This configuration does seemingly nothing, but it extends the DefaultDependencyInjectionConfig
  * which sets up the auto-wiring of all extension classes in the symfony container for us.
  *
- * @package LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig
+ * @package LaborDigital\T3baExample\Configuration\ExtConfig
  */
 class DiContainer extends DefaultDiConfig
 {

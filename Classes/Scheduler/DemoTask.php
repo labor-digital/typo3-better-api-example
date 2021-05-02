@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Scheduler;
+namespace LaborDigital\T3baExample\Scheduler;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;

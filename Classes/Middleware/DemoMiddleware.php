@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Middleware;
+namespace LaborDigital\T3baExample\Middleware;
 
 
 use GuzzleHttp\Psr7\Utils;
@@ -36,9 +36,9 @@ use Psr\Http\Server\RequestHandlerInterface;
  * This is a super simple middleware that acts as an example on how to configure a middleware
  * and how to register constructor arguments to middlewares
  *
- * @package LaborDigital\Typo3BetterApiExample\Middleware
- * @see     \LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig\DiContainer
- * @see     \LaborDigital\Typo3BetterApiExample\Configuration\ExtConfig\Http
+ * @package LaborDigital\T3baExample\Middleware
+ * @see     \LaborDigital\T3baExample\Configuration\ExtConfig\DiContainer
+ * @see     \LaborDigital\T3baExample\Configuration\ExtConfig\Http
  */
 class DemoMiddleware implements MiddlewareInterface
 {

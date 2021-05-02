@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\FormEngine\UserFunc;
+namespace LaborDigital\T3baExample\FormEngine\UserFunc;
 
 
 use Neunerlei\TinyTimy\DateTimy;

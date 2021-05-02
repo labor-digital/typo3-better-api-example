@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Controller;
+namespace LaborDigital\T3baExample\Controller;
 
 
 use LaborDigital\T3BA\ExtBase\Controller\BetterActionController;
@@ -37,7 +37,7 @@ use Psr\Log\LoggerAwareTrait;
  *
  * Please note that is important to use BetterActionController in order for the some features to work!
  *
- * @package LaborDigital\Typo3BetterApiExample\Controller
+ * @package LaborDigital\T3baExample\Controller
  */
 class ModuleController extends BetterActionController
     implements ConfigureModuleInterface, LoggerAwareInterface

@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Configuration\Table\Article;
+namespace LaborDigital\T3baExample\Configuration\Table\Article;
 
 
 use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
@@ -71,7 +71,7 @@ class ArticleTable implements ConfigureTcaTableInterface
             // We want to define a list of authors for our article. To define the relation we could either
             // use the selectGroup() preset to do that. However, we created a custom preset
             // to select an author in the following file:
-            // \LaborDigital\Typo3BetterApiExample\FormEngine\FieldPreset\Author::applySelectAuthor()
+            // \LaborDigital\T3baExample\FormEngine\FieldPreset\Author::applySelectAuthor()
             // and therefore we can use it here directly.
             $type->getField('author')
                  ->setLabel('exampleBe.t.article.field.author')

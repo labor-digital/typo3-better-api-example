@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Domain\DataModel;
+namespace LaborDigital\T3baExample\Domain\DataModel;
 
 
 use LaborDigital\T3BA\Tool\Tca\ContentType\Domain\AbstractDataModel;

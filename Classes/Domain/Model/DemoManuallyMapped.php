@@ -20,7 +20,7 @@
 declare(strict_types=1);
 
 
-namespace LaborDigital\Typo3BetterApiExample\Domain\Model;
+namespace LaborDigital\T3baExample\Domain\Model;
 
 
 use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
@@ -30,9 +30,9 @@ use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
  *
  * A manually mapped domain model that does not conform with TYPO3s naming schema
  *
- * @package LaborDigital\Typo3BetterApiExample\Domain\Model
+ * @package LaborDigital\T3baExample\Domain\Model
  *
- * @see     \LaborDigital\Typo3BetterApiExample\Configuration\Table\DemoTable
+ * @see     \LaborDigital\T3baExample\Configuration\Table\DemoTable
  */
 class DemoManuallyMapped extends BetterEntity
 {
