@@ -23,9 +23,9 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Scheduler;
 
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Scheduler\Task\ConfigureTaskInterface;
-use LaborDigital\T3BA\ExtConfigHandler\Scheduler\Task\TaskConfigurator;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\Scheduler\Task\ConfigureTaskInterface;
+use LaborDigital\T3ba\ExtConfigHandler\Scheduler\Task\TaskConfigurator;
 use TYPO3\CMS\Scheduler\Task\AbstractTask;
 
 class DemoTask extends AbstractTask implements ConfigureTaskInterface

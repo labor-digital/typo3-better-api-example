@@ -22,9 +22,9 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Command;
 
 
-use LaborDigital\T3BA\Core\Di\ContainerAwareTrait;
-use LaborDigital\T3BA\ExtConfigHandler\Command\ConfigureCliCommandInterface;
-use LaborDigital\T3BA\Tool\OddsAndEnds\NamingUtil;
+use LaborDigital\T3ba\Core\Di\ContainerAwareTrait;
+use LaborDigital\T3ba\ExtConfigHandler\Command\ConfigureCliCommandInterface;
+use LaborDigital\T3ba\Tool\OddsAndEnds\NamingUtil;
 use LaborDigital\T3baExample\Configuration\Table\Article\ArticleTable;
 use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable;
 use Neunerlei\Arrays\Arrays;

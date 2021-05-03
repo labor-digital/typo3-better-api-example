@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Domain\Model;
 
 
-use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
+use LaborDigital\T3ba\ExtBase\Domain\Model\BetterEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Content extends BetterEntity

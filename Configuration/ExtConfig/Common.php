@@ -23,13 +23,13 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Core\ConfigureTypoCoreInterface;
-use LaborDigital\T3BA\ExtConfigHandler\Core\TypoCoreConfigurator;
-use LaborDigital\T3BA\ExtConfigHandler\Fluid\ConfigureFluidInterface;
-use LaborDigital\T3BA\ExtConfigHandler\Fluid\FluidConfigurator;
-use LaborDigital\T3BA\ExtConfigHandler\Translation\ConfigureTranslationInterface;
-use LaborDigital\T3BA\ExtConfigHandler\Translation\TranslationConfigurator;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\Core\ConfigureTypoCoreInterface;
+use LaborDigital\T3ba\ExtConfigHandler\Core\TypoCoreConfigurator;
+use LaborDigital\T3ba\ExtConfigHandler\Fluid\ConfigureFluidInterface;
+use LaborDigital\T3ba\ExtConfigHandler\Fluid\FluidConfigurator;
+use LaborDigital\T3ba\ExtConfigHandler\Translation\ConfigureTranslationInterface;
+use LaborDigital\T3ba\ExtConfigHandler\Translation\TranslationConfigurator;
 use TYPO3\CMS\Core\Log\LogLevel;
 
 class Common implements ConfigureTranslationInterface,

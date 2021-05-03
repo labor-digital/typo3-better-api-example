@@ -23,9 +23,9 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Pid\ConfigurePidsInterface;
-use LaborDigital\T3BA\ExtConfigHandler\Pid\PidCollector;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\Pid\ConfigurePidsInterface;
+use LaborDigital\T3ba\ExtConfigHandler\Pid\PidCollector;
 
 class Pids implements ConfigurePidsInterface
 {

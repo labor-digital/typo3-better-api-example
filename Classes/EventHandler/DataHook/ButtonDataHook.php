@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\EventHandler\DataHook;
 
 
-use LaborDigital\T3BA\Tool\FormEngine\Custom\Field\CustomFieldDataHookContext;
+use LaborDigital\T3ba\Tool\FormEngine\Custom\Field\CustomFieldDataHookContext;
 
 class ButtonDataHook
 {

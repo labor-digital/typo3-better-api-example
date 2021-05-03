@@ -23,10 +23,10 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
-use LaborDigital\T3BA\ExtConfig\Interfaces\SiteKeyProviderInterface;
-use LaborDigital\T3BA\ExtConfig\SiteBased\SiteConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Routing\ConfigureRoutingInterface;
-use LaborDigital\T3BA\ExtConfigHandler\Routing\RoutingConfigurator;
+use LaborDigital\T3ba\ExtConfig\Interfaces\SiteKeyProviderInterface;
+use LaborDigital\T3ba\ExtConfig\SiteBased\SiteConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\Routing\ConfigureRoutingInterface;
+use LaborDigital\T3ba\ExtConfigHandler\Routing\RoutingConfigurator;
 
 class SubRouting implements ConfigureRoutingInterface, SiteKeyProviderInterface
 {

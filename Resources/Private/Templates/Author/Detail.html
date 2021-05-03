@@ -1,4 +1,4 @@
-<!--
+<f:comment><!--
   ~ Copyright 2021 LABOR.digital
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
   ~ limitations under the License.
   ~
   ~ Last modified: 2021.04.29 at 22:21
-  -->
+  --></f:comment>
 
 <html data-namespace-typo3-fluid="true">
 <article>
@@ -25,11 +25,9 @@
         
         <ul>
             <li>
-                <!-- @f.of -->
-                <f:translate key="p.author.birthday"/>
-                :
+                
+                {f:translate(key: 'p.author.birthday')}:
                 <f:format.date>{author.birthday}</f:format.date>
-                <!-- @f.on -->
             </li>
         </ul>
         
@@ -38,7 +36,7 @@
                 <f:widget.paginate objects="{articles}" as="paginatedArticles"
                                    configuration="{itemsPerPage:3, addQueryStringMethod: 'GET'}">
                     <f:for each="{paginatedArticles}" as="article">
-                        <li><a href="{T3BA:link.uri(definition: 'articleDetail', args:'{\'article\': article}')}">
+                        <li><a href="{t3ba:link.uri(definition: 'articleDetail', args:'{\'article\': article}')}">
                             {article.headline} -
                             <f:format.date>{article.published}</f:format.date>
                         </a></li>

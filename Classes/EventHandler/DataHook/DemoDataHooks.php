@@ -23,9 +23,9 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\EventHandler\DataHook;
 
 
-use LaborDigital\T3BA\Core\Di\PublicServiceInterface;
-use LaborDigital\T3BA\Tool\DataHook\DataHookContext;
-use LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService;
+use LaborDigital\T3ba\Core\Di\PublicServiceInterface;
+use LaborDigital\T3ba\Tool\DataHook\DataHookContext;
+use LaborDigital\T3ba\Tool\Rendering\FlashMessageRenderingService;
 
 /**
  * Class DemoDataHooks
@@ -46,14 +46,14 @@ use LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService;
 class DemoDataHooks implements PublicServiceInterface
 {
     /**
-     * @var \LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService
+     * @var \LaborDigital\T3ba\Tool\Rendering\FlashMessageRenderingService
      */
     protected $flashMessages;
     
     /**
      * DemoDataHooks constructor.
      *
-     * @param   \LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService  $flashMessages
+     * @param   \LaborDigital\T3ba\Tool\Rendering\FlashMessageRenderingService  $flashMessages
      */
     public function __construct(FlashMessageRenderingService $flashMessages)
     {

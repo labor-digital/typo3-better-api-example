@@ -23,14 +23,14 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Controller;
 
 
-use LaborDigital\T3BA\ExtBase\Controller\BetterContentActionController;
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
-use LaborDigital\T3BA\Tool\BackendPreview\BackendListLabelRendererInterface;
-use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext;
-use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
-use LaborDigital\T3BA\Tool\DataHook\DataHookContext;
+use LaborDigital\T3ba\ExtBase\Controller\BetterContentActionController;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
+use LaborDigital\T3ba\Tool\BackendPreview\BackendListLabelRendererInterface;
+use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererContext;
+use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererInterface;
+use LaborDigital\T3ba\Tool\DataHook\DataHookContext;
 use Neunerlei\TinyTimy\DateTimy;
 
 class PluginAController extends BetterContentActionController
@@ -52,7 +52,7 @@ class PluginAController extends BetterContentActionController
     /**
      * This method is executed every time the data handler saves a record of this content element to the database
      *
-     * @param   \LaborDigital\T3BA\Tool\DataHook\DataHookContext  $context
+     * @param   \LaborDigital\T3ba\Tool\DataHook\DataHookContext  $context
      */
     public function saveHook(DataHookContext $context): void
     {
@@ -65,7 +65,7 @@ class PluginAController extends BetterContentActionController
      * This method is called every time the backend renders the form for this content element.
      * It allows you to hide, add or modify the record as well as the form fields on the fly.
      *
-     * @param   \LaborDigital\T3BA\Tool\DataHook\DataHookContext  $context
+     * @param   \LaborDigital\T3ba\Tool\DataHook\DataHookContext  $context
      */
     public function formHook(DataHookContext $context): void
     {
@@ -78,7 +78,7 @@ class PluginAController extends BetterContentActionController
      * This method is used to render the backend preview of this content element.
      * You can either return a string to show, or set the body and header on the context object
      *
-     * @param   \LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext  $context
+     * @param   \LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererContext  $context
      */
     public function renderBackendPreview(BackendPreviewRendererContext $context)
     {

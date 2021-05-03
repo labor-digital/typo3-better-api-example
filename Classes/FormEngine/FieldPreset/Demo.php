@@ -23,8 +23,8 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\FormEngine\FieldPreset;
 
 
-use LaborDigital\T3BA\Tool\FormEngine\Custom\Field\CustomFieldPresetTrait;
-use LaborDigital\T3BA\Tool\Tca\Builder\FieldPreset\AbstractFieldPreset;
+use LaborDigital\T3ba\Tool\FormEngine\Custom\Field\CustomFieldPresetTrait;
+use LaborDigital\T3ba\Tool\Tca\Builder\FieldPreset\AbstractFieldPreset;
 use LaborDigital\T3baExample\FormEngine\Field\DemoField;
 
 /**

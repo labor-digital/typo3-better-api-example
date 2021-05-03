@@ -23,12 +23,12 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Controller;
 
 
-use LaborDigital\T3BA\ExtBase\Controller\BetterActionController;
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Module\ConfigureModuleInterface;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Module\ModuleConfigurator;
-use LaborDigital\T3BA\Tool\Rendering\BackendRenderingService;
-use LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService;
+use LaborDigital\T3ba\ExtBase\Controller\BetterActionController;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Module\ConfigureModuleInterface;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Module\ModuleConfigurator;
+use LaborDigital\T3ba\Tool\Rendering\BackendRenderingService;
+use LaborDigital\T3ba\Tool\Rendering\FlashMessageRenderingService;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 
@@ -45,7 +45,7 @@ class ModuleController extends BetterActionController
     use LoggerAwareTrait;
     
     /**
-     * @var \LaborDigital\T3BA\Tool\Rendering\FlashMessageRenderingService
+     * @var \LaborDigital\T3ba\Tool\Rendering\FlashMessageRenderingService
      */
     protected $flashMessageService;
     

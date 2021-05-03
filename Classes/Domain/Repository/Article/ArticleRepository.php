@@ -23,8 +23,8 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Domain\Repository\Article;
 
 
-use LaborDigital\T3BA\ExtBase\Domain\Repository\BetterRepository;
-use LaborDigital\T3BA\Tool\Database\BetterQuery\AbstractBetterQuery;
+use LaborDigital\T3ba\ExtBase\Domain\Repository\BetterRepository;
+use LaborDigital\T3ba\Tool\Database\BetterQuery\AbstractBetterQuery;
 use LaborDigital\T3baExample\Domain\Model\Article\Author;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 

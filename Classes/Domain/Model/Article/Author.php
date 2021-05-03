@@ -24,7 +24,7 @@ namespace LaborDigital\T3baExample\Domain\Model\Article;
 
 
 use DateTime;
-use LaborDigital\T3BA\ExtBase\Domain\Model\BetterEntity;
+use LaborDigital\T3ba\ExtBase\Domain\Model\BetterEntity;
 
 class Author extends BetterEntity
 {

@@ -22,13 +22,13 @@ declare(strict_types=1);
 
 namespace LaborDigital\T3baExample\Controller;
 
-use LaborDigital\T3BA\ExtBase\Controller\BetterContentActionController;
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\ContentElement\ConfigureContentElementInterface;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\ContentElement\ContentElementConfigurator;
-use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext;
-use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
-use LaborDigital\T3BA\Tool\Tca\ContentType\Builder\ContentType;
+use LaborDigital\T3ba\ExtBase\Controller\BetterContentActionController;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\ContentElement\ConfigureContentElementInterface;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\ContentElement\ContentElementConfigurator;
+use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererContext;
+use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererInterface;
+use LaborDigital\T3ba\Tool\Tca\ContentType\Builder\ContentType;
 use LaborDigital\T3baExample\EventHandler\DataHook\ButtonDataHook;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;

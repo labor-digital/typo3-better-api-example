@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Domain\DataModel;
 
 
-use LaborDigital\T3BA\Tool\Tca\ContentType\Domain\AbstractDataModel;
+use LaborDigital\T3ba\Tool\Tca\ContentType\Domain\AbstractDataModel;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 
 class Button extends AbstractDataModel

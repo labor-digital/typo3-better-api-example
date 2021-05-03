@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\FormEngine\Wizard;
 
 
-use LaborDigital\T3BA\Tool\FormEngine\Custom\Wizard\AbstractCustomWizard;
+use LaborDigital\T3ba\Tool\FormEngine\Custom\Wizard\AbstractCustomWizard;
 
 /**
  * Class DemoWizard

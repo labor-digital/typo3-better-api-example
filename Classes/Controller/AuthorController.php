@@ -23,12 +23,12 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Controller;
 
 
-use LaborDigital\T3BA\ExtBase\Controller\BetterContentActionController;
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
-use LaborDigital\T3BA\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
-use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererContext;
-use LaborDigital\T3BA\Tool\BackendPreview\BackendPreviewRendererInterface;
+use LaborDigital\T3ba\ExtBase\Controller\BetterContentActionController;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
+use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
+use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererContext;
+use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererInterface;
 use LaborDigital\T3baExample\Domain\Model\Article\Author;
 use LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository;
 use TYPO3\CMS\Core\DependencyInjection\NotFoundException;

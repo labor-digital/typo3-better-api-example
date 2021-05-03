@@ -23,9 +23,9 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Backend\BackendConfigurator;
-use LaborDigital\T3BA\ExtConfigHandler\Backend\ConfigureBackendInterface;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\Backend\BackendConfigurator;
+use LaborDigital\T3ba\ExtConfigHandler\Backend\ConfigureBackendInterface;
 
 class Backend implements ConfigureBackendInterface
 {

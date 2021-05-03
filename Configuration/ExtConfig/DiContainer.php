@@ -22,8 +22,8 @@ declare(strict_types=1);
 
 namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Di\DefaultDiConfig;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\Di\DefaultDiConfig;
 use LaborDigital\T3baExample\Middleware\DemoMiddleware;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;

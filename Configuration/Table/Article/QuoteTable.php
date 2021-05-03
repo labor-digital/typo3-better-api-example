@@ -23,9 +23,9 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Configuration\Table\Article;
 
 
-use LaborDigital\T3BA\ExtConfig\ExtConfigContext;
-use LaborDigital\T3BA\ExtConfigHandler\Table\ConfigureTcaTableInterface;
-use LaborDigital\T3BA\Tool\Tca\Builder\Type\Table\TcaTable;
+use LaborDigital\T3ba\ExtConfig\ExtConfigContext;
+use LaborDigital\T3ba\ExtConfigHandler\Table\ConfigureTcaTableInterface;
+use LaborDigital\T3ba\Tool\Tca\Builder\Type\Table\TcaTable;
 
 class QuoteTable implements ConfigureTcaTableInterface
 {
