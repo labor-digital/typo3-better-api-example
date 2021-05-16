@@ -38,7 +38,7 @@ use Psr\Http\Server\RequestHandlerInterface;
  *
  * @package LaborDigital\T3baExample\Middleware
  * @see     \LaborDigital\T3baExample\Configuration\ExtConfig\DiContainer
- * @see     \LaborDigital\T3baExample\Configuration\ExtConfig\Http
+ * @see     \LaborDigital\T3baExample\Configuration\ExtConfig\Routing
  */
 class DemoMiddleware implements MiddlewareInterface
 {

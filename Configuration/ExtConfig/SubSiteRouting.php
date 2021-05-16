@@ -25,10 +25,10 @@ namespace LaborDigital\T3baExample\Configuration\ExtConfig;
 
 use LaborDigital\T3ba\ExtConfig\Interfaces\SiteKeyProviderInterface;
 use LaborDigital\T3ba\ExtConfig\SiteBased\SiteConfigContext;
-use LaborDigital\T3ba\ExtConfigHandler\Routing\ConfigureRoutingInterface;
-use LaborDigital\T3ba\ExtConfigHandler\Routing\RoutingConfigurator;
+use LaborDigital\T3ba\ExtConfigHandler\Routing\Site\ConfigureSiteRoutingInterface;
+use LaborDigital\T3ba\ExtConfigHandler\Routing\Site\SiteRoutingConfigurator;
 
-class SubRouting implements ConfigureRoutingInterface, SiteKeyProviderInterface
+class SubSiteRouting implements ConfigureSiteRoutingInterface, SiteKeyProviderInterface
 {
     /**
      * @inheritDoc
@@ -38,7 +38,7 @@ class SubRouting implements ConfigureRoutingInterface, SiteKeyProviderInterface
         return ['foo'];
     }
     
-    public static function configureRouting(RoutingConfigurator $configurator, SiteConfigContext $context): void
+    public static function configureSiteRouting(SiteRoutingConfigurator $configurator, SiteConfigContext $context): void
     {
         dbge('sub routing!');
     }
