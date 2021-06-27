@@ -15,5 +15,6 @@
 		"typo3/cms": {
 			"extension-key": "t3ba_example"
 		}
-	}
+	},
+	"version": "0.0.1"
 }
