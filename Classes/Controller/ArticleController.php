@@ -29,15 +29,14 @@ use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Plugin\ConfigurePluginInterface;
 use LaborDigital\T3ba\ExtConfigHandler\ExtBase\Plugin\PluginConfigurator;
 use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererContext;
 use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererInterface;
-use LaborDigital\T3ba\Tool\DataHook\DataHookTypes;
+use LaborDigital\T3ba\Tool\TypoContext\TypoContextAwareTrait;
 use LaborDigital\T3baExample\Domain\Model\Article\Article;
 use LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository;
-use LaborDigital\T3baExample\EventHandler\DataHook\ButtonDataHook;
-use TYPO3\CMS\Core\DependencyInjection\NotFoundException;
 
 class ArticleController extends BetterContentActionController
     implements ConfigurePluginInterface, BackendPreviewRendererInterface
 {
+    use TypoContextAwareTrait;
     
     /**
      * @var \LaborDigital\T3baExample\Domain\Repository\Article\ArticleRepository
@@ -79,7 +78,6 @@ class ArticleController extends BetterContentActionController
                 'published' => 'exampleBe.t.article.field.published',
             ]);
         $flex->getField('settings.direction')
-             ->registerDataHook(DataHookTypes::TYPE_FORM, ButtonDataHook::class)
              ->setLabel('exampleBe.p.article.field.direction')
              ->applyPreset()->select([
                 'asc' => 'exampleBe.p.article.field.direction.asc',
@@ -108,10 +106,11 @@ class ArticleController extends BetterContentActionController
         $this->view->assign('articles', $this->repository->findForListPlugin($this->settings, $this->getData()));
     }
     
-    public function detailAction(?Article $article)
+    public function detailAction(?Article $article = null)
     {
         if ($article === null) {
-            throw new NotFoundException('You have to require an article for this action');
+            // If no article was selected we want the user redirected back to the list of all news articles
+            return $this->handleNotFound(null, ['redirectToPid' => '@pid.page.news.list']);
         }
         
         $this->view->assign('article', $article);

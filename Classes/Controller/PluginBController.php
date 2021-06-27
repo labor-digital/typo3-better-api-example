@@ -66,7 +66,7 @@ class PluginBController extends BetterContentActionController
     
     public function indexAction()
     {
-        dbge('INDEX');
+        return 'INDEX';
     }
     
     

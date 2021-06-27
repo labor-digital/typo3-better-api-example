@@ -1,0 +1,17 @@
+base: 'https://blog.lab-dig-typ-bet-api.localmachine.space/'
+languages:
+  -
+    title: English
+    enabled: true
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: ab
+    websiteTitle: ''
+    navigationTitle: ''
+    hreflang: ''
+    direction: ''
+    flag: global
+    languageId: 0
+rootPageId: 10
+websiteTitle: 'Blog Landingpage'

@@ -57,14 +57,14 @@ class AdvancedTable implements ConfigureTcaTableInterface
                 // tell the TYPO3 backend that it should open a specific storage page
                 // when the editor opens the "record" browser in the backend.
                  ->applyPreset()->relationGroup(ArticleTable::class, [
-                    'basePid' => '@pid.storage.article',
+                    'basePid' => '@pid.storage.news.article',
                 ]);
             
             $type->getField('group_with_multi_base_pid')
                 // This works with multiple tables as well
                  ->applyPreset()->relationGroup([ArticleTable::class, 'pages'], [
                     'basePid' => [
-                        ArticleTable::class => '@pid.storage.article',
+                        ArticleTable::class => '@pid.storage.news.article',
                         'pages' => 1,
                     ],
                 ]);

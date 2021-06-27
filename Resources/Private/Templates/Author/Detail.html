@@ -36,7 +36,7 @@
                 <f:widget.paginate objects="{articles}" as="paginatedArticles"
                                    configuration="{itemsPerPage:3, addQueryStringMethod: 'GET'}">
                     <f:for each="{paginatedArticles}" as="article">
-                        <li><a href="{t3ba:link.uri(definition: 'articleDetail', args:'{\'article\': article}')}">
+                        <li><a href="{t3ba:link.uri(definition: 'newsDetail', args:'{\'article\': article}')}">
                             {article.headline} -
                             <f:format.date>{article.published}</f:format.date>
                         </a></li>

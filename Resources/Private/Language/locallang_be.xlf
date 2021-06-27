@@ -20,6 +20,9 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2020-09-09T17:27:15Z" product-name="typo3_better_api_example">
 		<header/>
 		<body>
+			<trans-unit id="wizardTab.landingPage">
+				<source>Landing Page</source>
+			</trans-unit>
 			<trans-unit id="g.dummy">
 				<source>Dummy!</source>
 			</trans-unit>
@@ -97,6 +100,18 @@
 			</trans-unit>
 			<trans-unit id="p.pluginB.desc">
 				<source>A simple plugin that shows how you can use fluid templates as a backend preview</source>
+			</trans-unit>
+			<trans-unit id="p.blog.list.title">
+				<source>Blog List</source>
+			</trans-unit>
+			<trans-unit id="p.blog.list.desc">
+				<source>Shows a list of blog entries for the blog landingpage</source>
+			</trans-unit>
+			<trans-unit id="p.blog.detail.title">
+				<source>Blog Post Detail</source>
+			</trans-unit>
+			<trans-unit id="p.blog.list.desc">
+				<source>The detail view of a single blog post</source>
 			</trans-unit>
 			<trans-unit id="t.demo.title">
 				<source>Demo-Record</source>
@@ -190,6 +205,24 @@
 			</trans-unit>
 			<trans-unit id="t.author.field.birthday">
 				<source>Birthday</source>
+			</trans-unit>
+			<trans-unit id="t.blogPost.title">
+				<source>Blog Post</source>
+			</trans-unit>
+			<trans-unit id="t.blogPost.field.title">
+				<source>Post-Title</source>
+			</trans-unit>
+			<trans-unit id="t.blogPost.field.slug">
+				<source>Slug</source>
+			</trans-unit>
+			<trans-unit id="t.blogPost.field.bodyText">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="t.blogPost.field.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="t.blogPost.field.authorName">
+				<source>Author name</source>
 			</trans-unit>
 		</body>
 	</file>

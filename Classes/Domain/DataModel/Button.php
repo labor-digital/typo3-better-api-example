@@ -37,7 +37,7 @@ class Button extends AbstractDataModel
     /**
      * @var string
      */
-    protected $text;
+    protected $label;
     
     /**
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
@@ -50,8 +50,8 @@ class Button extends AbstractDataModel
     /**
      * @return string
      */
-    public function getText(): ?string
+    public function getLabel(): ?string
     {
-        return $this->text;
+        return $this->label;
     }
 }

@@ -29,7 +29,6 @@ use LaborDigital\T3ba\ExtConfigHandler\ExtBase\ContentElement\ContentElementConf
 use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererContext;
 use LaborDigital\T3ba\Tool\BackendPreview\BackendPreviewRendererInterface;
 use LaborDigital\T3ba\Tool\Tca\ContentType\Builder\ContentType;
-use LaborDigital\T3baExample\EventHandler\DataHook\ButtonDataHook;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 
@@ -78,7 +77,6 @@ class ButtonController extends BetterContentActionController
                  ->link(['required', 'allowLinkSets']);
             
             $type->getField('custom')
-                 ->registerFormHook(ButtonDataHook::class)
                  ->applyPreset()->demoToggle();
             
             $type->getField('icon')
@@ -90,12 +88,6 @@ class ButtonController extends BetterContentActionController
     
     public function indexAction(): string
     {
-//        $link = $this->cs()->links->getLink();
-//        $link = $link->withPid(3)
-//                     ->withCHashExcludedArgs(['foo'])
-//                     ->withAddedToArgs('foo', 'bar');
-//        dbge($link->build());
-//
         return 'Button :D';
     }
     

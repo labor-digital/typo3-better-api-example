@@ -14,33 +14,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.04.29 at 22:21
+ * Last modified: 2021.06.27 at 12:36
  */
 
 declare(strict_types=1);
 
 
-namespace LaborDigital\T3baExample\Configuration\ExtConfig;
+namespace LaborDigital\T3baExample\Configuration\ExtConfig\Site\Landingpage;
 
 
-use LaborDigital\T3ba\ExtConfig\Interfaces\SiteKeyProviderInterface;
 use LaborDigital\T3ba\ExtConfig\SiteBased\SiteConfigContext;
 use LaborDigital\T3ba\ExtConfigHandler\Routing\Site\ConfigureSiteRoutingInterface;
 use LaborDigital\T3ba\ExtConfigHandler\Routing\Site\SiteRoutingConfigurator;
+use LaborDigital\T3baExample\Configuration\Table\BlogPostTable;
+use LaborDigital\T3baExample\Controller\BlogController;
 
-class SubSiteRouting implements ConfigureSiteRoutingInterface, SiteKeyProviderInterface
+class Routing implements ConfigureSiteRoutingInterface
 {
     /**
      * @inheritDoc
      */
-    public static function getSiteKeys(array $existingSiteKeys): array
-    {
-        return ['foo'];
-    }
-    
     public static function configureSiteRouting(SiteRoutingConfigurator $configurator, SiteConfigContext $context): void
     {
-        dbge('sub routing!');
+        $configurator->registerExtBasePagination('blogPagination', BlogController::class, 'list', ['@pid.page.blog.list']);
+        $configurator->registerExtbasePlugin('blogDetail', '/{post}', BlogController::class, 'detail', ['@pid.page.blog.detail'], [
+            'dbArgs' => [
+                'post' => [BlogPostTable::class, 'slug'],
+            ],
+        ]);
     }
     
 }

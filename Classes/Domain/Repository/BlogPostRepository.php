@@ -14,21 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.05.01 at 15:24
+ * Last modified: 2021.06.27 at 13:55
  */
 
 declare(strict_types=1);
 
 
-namespace LaborDigital\T3baExample\EventHandler\DataHook;
+namespace LaborDigital\T3baExample\Domain\Repository;
 
 
-use LaborDigital\T3ba\Tool\FormEngine\Custom\Field\CustomFieldDataHookContext;
+use LaborDigital\T3ba\ExtBase\Domain\Repository\BetterRepository;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
-class ButtonDataHook
+class BlogPostRepository extends BetterRepository
 {
-    public function formHook(CustomFieldDataHookContext $context)
+    /**
+     * Gets the list of blog posts, ordered by either their date or the tstamp value
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function getOrderedBlogPosts(): QueryResultInterface
     {
-        dbge($context);
+        return $this->getQuery()->withOrder(['date' => 'desc', 'tstamp' => 'desc'])->getAll();
     }
 }

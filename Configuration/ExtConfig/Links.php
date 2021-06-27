@@ -29,6 +29,8 @@ use LaborDigital\T3ba\ExtConfigHandler\Link\DefinitionCollector;
 use LaborDigital\T3baExample\Configuration\Table\Article\ArticleTable;
 use LaborDigital\T3baExample\Controller\ArticleController;
 use LaborDigital\T3baExample\Controller\AuthorController;
+use LaborDigital\T3baExample\Controller\BlogController;
+use LaborDigital\T3baExample\Domain\Model\BlogPost;
 
 class Links implements ConfigureLinksInterface
 {
@@ -48,10 +50,10 @@ class Links implements ConfigureLinksInterface
         // To register a new link set, we simply require one using getSet() from the collector
         // the syntax is quite similar to the T3BA TypoLink context, however, the collector is mutable,
         // so you can simply chain the methods like so:
-        $collector->getDefinition('articleDetail')
+        $collector->getDefinition('newsDetail')
             // We define the page id were our article detail plugin is stored.
             // You can either use a hard coded value, or reference a pid configured in Pids.
-                  ->setPid('@pid.page.article.detail')
+                  ->setPid('@pid.page.news.detail')
             // To define the arguments for a link you can either define one, or
             // create a placeholder that has to be provided when the link is build.
             // A placeholder is simply a string with a question mark as content.
@@ -76,20 +78,37 @@ class Links implements ConfigureLinksInterface
                     // This is optional, but we want the TYPO3 backend to automatically
                     // open the correct storage pid for us when a user clicks on the "article" tab.
                     // Therefore we provide a base/storage pid using a reference in our pids
-                    'basePid' => '@pid.storage.article',
+                    'basePid' => '@pid.storage.news.article',
                 ]
             );
         
         // Next we register a simple definition that will always point to our article list pid
-        $collector->getDefinition('articleList')
-                  ->setPid('@pid.page.article.list');
+        $collector->getDefinition('newsList')
+                  ->setPid('@pid.page.news.list');
         
         // Similar to the article detail we register a definition for an author detail page
         $collector->getDefinition('authorDetail')
-                  ->setPid('@pid.page.author.detail')
+                  ->setPid('@pid.page.news.author.detail')
                   ->addToArgs('author', '?')
                   ->setControllerClass(AuthorController::class)
                   ->setControllerAction('detail');
+        
+        // For our landing page we also create some links for blog posts
+        $collector->getDefinition('blogList')
+                  ->setPid('@pid.page.blog.list');
+        
+        $collector->getDefinition('blogDetail')
+                  ->setPid('@pid.page.blog.detail')
+                  ->addToArgs('post', '?')
+                  ->setControllerClass(BlogController::class)
+                  ->setControllerAction('detail')
+                  ->addToLinkBrowser(
+                      'exampleBe.t.blogPost.title',
+                      BlogPost::class,
+                      [
+                          'basePid' => '@pid.storage.blogPost',
+                      ]
+                  );
     }
     
 }

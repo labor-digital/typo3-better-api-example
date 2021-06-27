@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified: 2021.04.29 at 22:21
+ * Last modified: 2021.06.04 at 17:44
  */
 
 declare(strict_types=1);
 
 
-namespace LaborDigital\T3baExample\Configuration\ExtConfig;
+namespace LaborDigital\T3baExample\Configuration\ExtConfig\Site\Main;
 
 
 use LaborDigital\T3ba\ExtConfig\SiteBased\SiteConfigContext;
@@ -31,7 +31,7 @@ use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable;
 use LaborDigital\T3baExample\Controller\ArticleController;
 use LaborDigital\T3baExample\Controller\AuthorController;
 
-class SiteRouting implements ConfigureSiteRoutingInterface
+class Routing implements ConfigureSiteRoutingInterface
 {
     
     /**
@@ -71,7 +71,7 @@ class SiteRouting implements ConfigureSiteRoutingInterface
             ArticleController::class, 'list',
             // An as a last step, we provide a list, or in this case a single pid on which this enhancer should be active.
             // You can either use numeric values, or pid references here.
-            ['@pid.page.article.list']
+            ['@pid.page.news.list']
         );
         
         // The second route is used on our article detail page (/article/)
@@ -81,14 +81,14 @@ class SiteRouting implements ConfigureSiteRoutingInterface
         // we use registerExtbasePlugin() instead.
         $configurator->registerExtbasePlugin(
         // This is, again a unique name for our enhancer
-            'articleDetail',
+            'newsDetail',
             // This is the route path we want to register, it can contain either static strings, or dynamic
             // segments (article in our case) to be mapped.
             '/{article}',
             // Similar to before, we define the extbase controller and our action name...
             ArticleController::class, 'detail',
             // ... and define the pids where our enhancer should be active
-            ['@pid.page.article.detail'],
+            ['@pid.page.news.detail'],
             [
                 // We use the "dbArgs" option to tell TYPO3 that a specific segment should be resolved
                 // using a database table field. In our case, we map the segment "article" on the "slug" field
@@ -106,7 +106,7 @@ class SiteRouting implements ConfigureSiteRoutingInterface
             'authorDetail',
             '{author}',
             AuthorController::class, 'detail',
-            ['@pid.page.author.detail'],
+            ['@pid.page.news.author.detail'],
             [
                 // This is special, because our author-detail page contains a list of all
                 // articles of the shown author, we have a pagination of those articles inside
