@@ -37,6 +37,8 @@ class AuthorTable implements ConfigureTcaTableInterface
     {
         $table->setTitle('exampleBe.t.author.title');
         
+        $table->enablePreviewLink('authorDetail');
+        
         // To make the table easier to read in the backend
         // we use the "last_name" column as main label column
         // in addition to that we add the "first_name" column as secondary label column and force

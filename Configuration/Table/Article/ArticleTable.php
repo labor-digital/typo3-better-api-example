@@ -37,6 +37,13 @@ class ArticleTable implements ConfigureTcaTableInterface
     {
         $table->setTitle('exampleBe.t.article.title');
         
+        // This option enables you to automatically create a "preview" button in the TYPO3
+        // backend. This allows your editor team to jump to the frontend preview of a record.
+        // You can either specify a page uid or use a already prepared link definition to
+        // tell the system how to create the link.
+        // PRO-tip: This works with route enhancers and even if your record is hidden!
+        $table->enablePreviewLink('newsDetail');
+        
         // Make sure this table always is shown in front of "tt_content" records
         $table->setListPosition('tt_content');
         

@@ -23,7 +23,7 @@
         <f:for each="{paginatedArticles}" as="article" iteration="i">
             <section>
                 <h3 style="margin-bottom: 0">
-                    <a href="{t3ba:link.uri(definition: 'newsDetail', args:{'article': article})}">
+                    <a href="{t3ba:link.uri(definition: 'newsDetail', args:{article: article})}">
                         {article.headline}
                     </a>
                 </h3>
@@ -37,7 +37,7 @@
                 </f:if>
                 <div>
                     <f:for each="{article.author}" as="author" iteration="it">
-                        <a href="{t3ba:link.uri(definition: 'authorDetail', args: {'author': author})}">
+                        <a href="{t3ba:link.uri(definition: 'authorDetail', args: {author: author})}">
                             {author.firstName} {author.lastName}
                         </a>
                         <f:if condition="{it.isLast}">
