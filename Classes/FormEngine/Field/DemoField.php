@@ -57,7 +57,7 @@ class DemoField extends AbstractCustomField
      */
     protected const TPL
         = <<<HTML
-<div class="demoField" id="{{renderId}}">
+<div class="demoField" id="demoField_{{renderName}}">
     {{{hiddenField}}}
     <button class="demoField__button demoField__button--off btn btn-default">{{translate "exampleBe.field.demoField.button.off"}}</button>
     <button class="demoField__button demoField__button--on btn btn-default">{{translate "exampleBe.field.demoField.button.on"}}</button>
@@ -85,10 +85,25 @@ HTML;
      */
     public function render(): string
     {
-        // We can register additional assets for the backend for each field that gets rendered.
-        // Those assets will only be used when the field is actually used.
-        // Sadly we can't use the {{extKey}} placeholder here and therefore have to define the ext key statically here.
-        $this->context->registerScript('EXT:typo3_better_api_example/Resources/Public/Assets/DemoField/demoField.js');
+        // The TYPO3 backend comes with support of loading js modules using requireJs,
+        // so we will use this as our main source of JS delivery for form fields.
+        // You can read more about it here: https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/ApiOverview/JavaScript/RequireJS/Extensions/Index.html
+        // The basic jist is, to load a js file we have to put it in the Resources/Public/JavaScript/OurFile.js (mind the capitalization)
+        // and can load it using TYPO3/CMS/OurExtKey/OurFile, this works for nested directories as well.
+        $this->context->registerRequireJsModule(
+            'TYPO3/CMS/T3baExample/DemoField',
+            // Additionally we can create a callback function which is executed for every field in the HTML markup
+            // this makes it perfect for passing unique information like the current field id and name to the javascript implementation.
+            // This is javascript code as a string, that should start with a "function" keyword. If the callback does not start with a function,
+            // it will automatically be wrapped into one. In that case can use the "module" variable to access the export of the js module.
+            'module("' . $this->context->getRenderName() . '")'
+        // The code above is identical to writing this, but saves a bit of typing:
+        // function(fieldJs){ fieldJs("' . $this->context->getRenderName() . '"); }
+        );
+        
+        // If you need to load external script files, or for whatever reason can't, or don't want to use requireJs directly,
+        // you can register any other script using the registerScript method. Note, that the script will only be loaded once per page, not per field!
+        $this->context->registerScript('EXT:t3ba_example/Resources/Public/Assets/DemoField/demoField.js');
         
         // We use the mustache template engine provided by T3BA to render our template.
         // You could also use renderFluidTemplate() here to render a fluid template instead.

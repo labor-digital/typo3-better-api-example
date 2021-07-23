@@ -62,6 +62,19 @@ class AuthorTable implements ConfigureTcaTableInterface
                  ->applyPreset()->slug(['last_name', 'first_name'], ['separator' => '-']);
             
             $type->getField('birthday')->applyPreset()->date();
+            
+            // In order for the backend editors to see which articles are written by the author
+            // we create a reflection of the relation. TYPO3 calls this the "opposite" of an mm relation.
+            // The relation we want to reflect here, is done in the ArticleTable class through the "author" field.
+            // As you can see there, the "author" field, defines the "mmOpposite" option, that points to this field here.
+            // On this end of the relation, we now point back to the article table and the "author" field.
+            // This allows both involved tables to create new relations.
+            
+            // TIP: The "readOnly" option, can be removed if you want to actively link articles to an
+            // author from the author table.
+            $type->getField('articles')
+                 ->applyPreset()
+                 ->relationGroupOpposite(ArticleTable::class, 'author', ['readOnly']);
         });
     }
     

@@ -19,11 +19,18 @@
 <html data-namespace-typo3-fluid="true">
 <article>
     <div>
-        <h3>
+        <f:comment>
+            <!--
+            The page title viewHelper allows you to set the page title right from your fluid template.
+            -->
+        </f:comment>
+        <t3ba:pageTitle>{article.headline}</t3ba:pageTitle>
+        
+        <h1>
             {article.headline}
-        </h3>
+        </h1>
         <f:if condition="{article.subHeadline}">
-            <h4>{article.subHeadline}</h4>
+            <h2>{article.subHeadline}</h2>
         </f:if>
         
         <f:if condition="{article.categories}">
@@ -34,16 +41,16 @@
             </ul>
         </f:if>
         
-        <f:for each="{article.content}" as="el">
-            <div>
-                <f:if condition="{el.headline}">
-                    <h6>{el.headline}</h6>
-                </f:if>
-                <span>
-                    {el.bodytext -> f:format.html()}
-                </span>
-            </div>
-        </f:for>
+        <f:if condition="{article.bannerImage}">
+            <f:image image="{article.bannerImage}" maxWidth="400"/>
+        </f:if>
+        
+        <f:comment><!--
+        You can render content elements created through inline records with the inlineContent view helper.
+        It receives a list of uids (either as comma separated list, array, or ObjectStorage of extbase domain entities)
+        and renders the html for it.
+        --></f:comment>
+        <t3ba:inlineContent>{article.content}</t3ba:inlineContent>
         
         <h4>
             <f:translate key="p.article.author"/>

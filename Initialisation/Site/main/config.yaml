@@ -17,15 +17,15 @@ languages:
     enabled: true
     base: /de/
     typo3Language: de
-    locale: de_DE
+    locale: de_DE.UTF-8
     iso-639-1: de
-    websiteTitle: ''
-    navigationTitle: ''
-    hreflang: ''
+    websiteTitle: 'T3BA - Beispiel'
+    navigationTitle: Deutsch
+    hreflang: de-De
     direction: ''
     fallbackType: strict
     fallbacks: ''
     flag: de
     languageId: 1
 rootPageId: 1
-websiteTitle: ''
+websiteTitle: 'T3BA - Example'

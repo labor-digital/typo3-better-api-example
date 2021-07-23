@@ -105,6 +105,27 @@ class AdvancedTable implements ConfigureTcaTableInterface
                 // The creation of custom field wizards works in a similar way to fields
                 // instead of customField() just use the customWizard() preset.
                  ->applyPreset()->customWizard(DemoWizard::class);
+            
+            // It is super easy to create repeatable sections through the inline relation type.
+            // As you see, I created a dedicated section table which is used as target here.
+            // The table is marked as "hidden" and therefore will not show up in the list view.
+            $type->getField('sections')
+                 ->applyPreset()->inline(DemoSectionTable::class);
+            
+            // You know, whats also super easy? Adding content elements!
+            // Under the hood this is still an inline relation but automatically links to the tt_content table.
+            // Additionally it has some tricks up it's sleeve, if you go ahead and take a look at that field in
+            // the backend, you will see, that the "new" button automatically opens a fancy new content element
+            // wizard, instead of simply dropping in a new row with the first CType.
+            // The tt_content table will be automatically extended to contain additional fields for the inline
+            // and inline sorting value.
+            $type->getField('content')
+                 ->applyPreset()->inlineContent();
+            
+            // Furthermore you can predefine which CType should be used for added records by default.
+            // This is nice if you want to create a list of multiple of the same elements
+            $type->getField('buttons')
+                 ->applyPreset()->inlineContent(['defaultCType' => 't3baexample_button']);
         });
     }
     

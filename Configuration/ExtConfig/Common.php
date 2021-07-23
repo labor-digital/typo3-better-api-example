@@ -30,6 +30,7 @@ use LaborDigital\T3ba\ExtConfigHandler\Fluid\ConfigureFluidInterface;
 use LaborDigital\T3ba\ExtConfigHandler\Fluid\FluidConfigurator;
 use LaborDigital\T3ba\ExtConfigHandler\Translation\ConfigureTranslationInterface;
 use LaborDigital\T3ba\ExtConfigHandler\Translation\TranslationConfigurator;
+use LaborDigital\T3ba\T3baFeatureToggles;
 use TYPO3\CMS\Core\Log\LogLevel;
 
 class Common implements ConfigureTranslationInterface,
@@ -58,7 +59,14 @@ class Common implements ConfigureTranslationInterface,
         // Registers a global log writer that will push all logs into the stdOut of the application.
         // This makes this log writer extremely useful for docker environments.
         // "global" writers catch all log entries that have not been processed by specifically configured log writers
-        $configurator->registerStreamLogger(['global']);
+        $configurator->registerStreamLogger(['global', 'logLevel' => LogLevel::WARNING]);
+        
+        // V11 of this extension, will modify the way how inline relations, and MM table definitions
+        // are generated. While upgrade wizards exists for both of those changes, to be up to date,
+        // this extension enables both feature toggles to use the new features in v10 a bit early.
+        $configurator->enableFeature(T3baFeatureToggles::TCA_V11_MM_TABLES)
+                     ->enableFeature(T3baFeatureToggles::TCA_V11_INLINE_RELATIONS)
+                     ->enableFeature(T3baFeatureToggles::CONTENT_TYPE_V11_NAMING_SCHEMA);
     }
     
     /**

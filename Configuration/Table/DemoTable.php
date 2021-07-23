@@ -70,7 +70,7 @@ class DemoTable implements ConfigureTcaTableInterface
         
         // Non-standard conform domain models can be mapped without typoScript with ease
         // You can optionally even map table fields to domain properties if they are not conform with the TYPO3 standard
-        $table->addModelClass(DemoManuallyMapped::class, ['input' => 'mappedInput']);
+        $table->registerModelClass(DemoManuallyMapped::class, ['input' => 'mappedInput']);
         
         // This hook will be executed every time this table gets saved.
         // It will be triggered in ANY registered type.

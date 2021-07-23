@@ -37,7 +37,7 @@ class DemoWizard extends AbstractCustomWizard
 {
     protected const TPL
         = <<<HTML
-<div class="demoWizard" data-target="{{renderName}}">
+<div class="demoWizard" id="demoWizard_{{renderName}}">
     <button class="btn btn-default">{{translate "exampleBe.wizard.button.generate"}}</button>
 </div>
 HTML;
@@ -47,8 +47,13 @@ HTML;
      */
     public function render(): string
     {
-        $this->context->registerScript('EXT:typo3_better_api_example/Resources/Public/Assets/DemoWizard/demoWizard.js');
-        $this->context->registerStylesheet('EXT:typo3_better_api_example/Resources/Public/Assets/DemoWizard/demoWizard.css');
+        $this->context->registerRequireJsModule(
+            'TYPO3/CMS/T3baExample/DemoWizard',
+            'module("' . $this->context->getRenderName() . '");'
+        );
+        
+        // Similarly to javascript you can also include stylesheets using the registerStylesheet helper.
+        $this->context->registerStylesheet('EXT:t3ba_example/Resources/Public/Assets/DemoWizard/demoWizard.css');
         
         return $this->renderTemplate(static::TPL);
     }

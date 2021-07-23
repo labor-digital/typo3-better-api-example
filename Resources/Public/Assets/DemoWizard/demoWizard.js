@@ -19,6 +19,7 @@
 (
     function () {
         var wizards = document.querySelectorAll('.demoWizard');
+        console.log(wizards);
         for (var i = 0; i < wizards.length; i++) {
             (
                 function () {
@@ -28,19 +29,6 @@
                     if (typeof targetName !== 'string') {
                         return;
                     }
-                    
-                    // If there is a better way of setting a value than selecting and updating both fields
-                    // at the same time, please let me know!
-                    var target = document.querySelector('input[data-formengine-input-name="' + targetName + '"]');
-                    var hidden = document.querySelector('input[name="' + targetName + '"]');
-                    var button = wizard.querySelector('button');
-                    
-                    button.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        var rand = Math.random();
-                        target.value = rand;
-                        hidden.value = rand;
-                    });
                 }
             )();
         }

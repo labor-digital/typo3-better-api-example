@@ -51,7 +51,7 @@ class ContentTable implements ConfigureTcaTableInterface, TcaTableNameProviderIn
         // We want to tell the table, that our "Content" model, should be considered part of it.
         // This allows extBase to map this model to the correct table when used as relation in extBase models,
         // no typoScript needed :D
-        $table->addModelClass(Content::class);
+        $table->registerModelClass(Content::class);
         
         // Let's also remove some clutter fields we don't want from the form,
         // we do this for every type that exists

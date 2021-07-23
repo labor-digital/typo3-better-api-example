@@ -82,7 +82,17 @@ class ArticleTable implements ConfigureTcaTableInterface
             // and therefore we can use it here directly.
             $type->getField('author')
                  ->setLabel('exampleBe.t.article.field.author')
-                 ->applyPreset()->selectAuthor(['required', 'maxItems' => 4]);
+                 ->applyPreset()->selectAuthor([
+                    'required',
+                    'maxItems' => 4,
+                    // Our author selection creates an MM relation between the article and the author
+                    // which we can reflect on the "author" table. To do this, you can use the "mmOpposite"
+                    // option and set the field on the other table that should reflect this relation.
+                    // Head over to the AuthorTable class and find the "articles" field, to see whats needed
+                    // on the related record in order to use this option.
+                    // Note: the mmOpposite option ONLY works if a single table can be selected in your group.
+                    'mmOpposite' => 'articles',
+                ]);
             
             // We want our article to have a timestamp that show's when it was published.
             // So we use a date preset and we also allow the selection of a time using the "withTime" flag.

@@ -24,7 +24,7 @@ namespace LaborDigital\T3baExample\FormEngine\FieldPreset;
 
 
 use LaborDigital\T3ba\Tool\Tca\Builder\FieldPreset\AbstractFieldPreset;
-use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable as AuthorTable;
+use LaborDigital\T3baExample\Configuration\Table\Article\AuthorTable;
 
 class Author extends AbstractFieldPreset
 {
@@ -38,6 +38,9 @@ class Author extends AbstractFieldPreset
     {
         // We set the default max items value to 1 if not provided differently by the author
         $options['maxItems'] = $options['maxItems'] ?? 1;
+        
+        // Additionally, we set the storage pid for our author records to make it easier for the editor
+        $options['basePid'] = $options['basePid'] ?? '@pid.storage.news.author';
         
         // A preset can also utilize other, existing presets to create convenience wrappers, like this one
         $this->field->applyPreset()->relationGroup(AuthorTable::class, $options);

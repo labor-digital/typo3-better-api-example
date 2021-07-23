@@ -25,6 +25,7 @@ namespace LaborDigital\T3baExample\Domain\Model\Article;
 
 use DateTime;
 use LaborDigital\T3ba\ExtBase\Domain\Model\BetterEntity;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -53,6 +54,7 @@ class Article extends BetterEntity
     
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\T3baExample\Domain\Model\Content>
+     * @Lazy()
      */
     protected $content;
     
