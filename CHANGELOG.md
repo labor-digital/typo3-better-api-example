@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.2.0](https://github.com/labor-digital/typo3-better-api-example/compare/v10.1.0...v10.2.0) (2021-07-23)
+
+
+### Features
+
+* implement new feature examples ([b131f47](https://github.com/labor-digital/typo3-better-api-example/commit/b131f47ae60eee175ebfcda299931b850f85afaa))
+
 ## [10.1.0](https://github.com/labor-digital/typo3-better-api-example/compare/v10.0.1...v10.1.0) (2021-07-15)
 
 
