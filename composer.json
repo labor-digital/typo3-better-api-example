@@ -4,7 +4,7 @@
 	"type": "typo3-cms-extension",
 	"license": "Apache-2.0",
 	"require": {
-		"labor-digital/typo3-better-api": "^10.7.1"
+		"labor-digital/typo3-better-api": "^10"
 	},
 	"autoload": {
 		"psr-4": {
