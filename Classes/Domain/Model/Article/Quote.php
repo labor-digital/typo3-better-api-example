@@ -29,12 +29,28 @@ class Quote extends BetterEntity
 {
     
     /**
-     * @var string
+     * @var string|null
      */
     protected $quote;
     
     /**
-     * @var \LaborDigital\T3baExample\Domain\Model\Article\Author
+     * @var \LaborDigital\T3baExample\Domain\Model\Article\Author|null
      */
     protected $author;
+    
+    /**
+     * @return string
+     */
+    public function getQuote(): string
+    {
+        return (string)$this->quote;
+    }
+    
+    /**
+     * @return \LaborDigital\T3baExample\Domain\Model\Article\Author|null
+     */
+    public function getAuthor(): ?Author
+    {
+        return $this->author;
+    }
 }

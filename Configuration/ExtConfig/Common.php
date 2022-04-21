@@ -42,7 +42,8 @@ class Common implements ConfigureTranslationInterface,
      */
     public static function configureTranslation(TranslationConfigurator $configurator, ExtConfigContext $context): void
     {
-        $configurator->registerNamespace('exampleBe', 'locallang_be.xlf');
+        $configurator->registerNamespace('exampleBe', 'locallang_be.xlf')
+                     ->registerNamespace('example');
     }
     
     /**

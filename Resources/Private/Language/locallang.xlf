@@ -35,8 +35,12 @@
 			<trans-unit id="p.article.author">
 				<source>Author</source>
 			</trans-unit>
-			<trans-unit id="p.article.author">
+			
+			<trans-unit id="misc.search.tag.author">
 				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="misc.search.tag.article">
+				<source>Article</source>
 			</trans-unit>
 		</body>
 	</file>

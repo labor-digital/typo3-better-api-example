@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 44.6 54.6" style="enable-background:new 0 0 44.6 54.6;" xml:space="preserve">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Ebene_1" x="0px" y="0px" viewBox="0 0 44.6 54.6" style="enable-background:new 0 0 44.6 54.6;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#99BED6;}
 	.st1{fill:#005B99;}
 </style>
 <g>
-	<path class="st0" d="M44.6,54.6v-16c0-5.1-4.2-9.3-9.3-9.3h-3.3l-9.6,7.8l-9.6-7.8H9.3c-5.1,0-9.3,4.2-9.3,9.3v16H44.6z"/>
-	<circle class="st1" cx="22.3" cy="12.5" r="12.5"/>
+	<path class="st0" d="M44.6,54.6v-16c0-5.1-4.2-9.3-9.3-9.3h-3.3l-9.6,7.8l-9.6-7.8H9.3c-5.1,0-9.3,4.2-9.3,9.3v16H44.6z"></path>
+	<circle class="st1" cx="22.3" cy="12.5" r="12.5"></circle>
 </g>
 </svg>

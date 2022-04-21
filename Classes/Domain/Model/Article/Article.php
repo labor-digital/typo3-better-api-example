@@ -103,7 +103,7 @@ class Article extends BetterEntity
     }
     
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\LaborDigital\T3baExample\Domain\Model\Article\Author>
      */
     public function getAuthor(): ?ObjectStorage
     {
