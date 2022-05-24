@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace LaborDigital\T3baExample\Search\ContentElement;
 
 
-use LaborDigital\T3sai\Core\Indexer\Node\Node;
+use LaborDigital\T3sai\Core\Indexer\Queue\QueueRequest;
 use LaborDigital\T3sai\Search\Indexer\Page\ContentElement\AbstractContentElementIndexer;
 
 class ButtonIndexer extends AbstractContentElementIndexer
@@ -31,7 +31,7 @@ class ButtonIndexer extends AbstractContentElementIndexer
     /**
      * @inheritDoc
      */
-    public function canHandle(string $cType, string $listType, array $row, Node $node): bool
+    public function canHandle(string $cType, string $listType, array $row, QueueRequest $request): bool
     {
         // This method is called on all registered content element indexers to check
         // if one of them can handle a certain element. If multiple indexers can handle
@@ -44,7 +44,7 @@ class ButtonIndexer extends AbstractContentElementIndexer
     /**
      * @inheritDoc
      */
-    public function generateContent(array $row, Node $node): string
+    public function generateContent(array $row, QueueRequest $request): string
     {
         // This method is used to stringify the database row of the content element.
         // The $row is already enriched with potential extension columns provided by the T3BA framework.
